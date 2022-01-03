@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Nguyen Van A",
+    "age": 26,
+    "src": "https://drive.google.com/uc?export=download&id=1gWcsfmVEtfX43u0NTZNIjX10V4MXtxGF",
+    "address": "Hanoi",
+    "phone": "0987677989",
+    "sympstoms": "Dry cough, cough with phlegm, difficulty breathing",
+    "date_diagnosis": "25/11/2021",
+    "date_ctscan": "26/11/2021"
+  },
+  {
+    "id": 2,
+    "name": "Nguyen Van B",
+    "age": 30,
+    "src": "https://news.cancerresearchuk.org/wp-content/uploads/2018/12/LungCancerCTscan.jpg",
+    "address": "Vinh Phuc",
+    "phone": "0987677987",
+    "sympstoms": "Smoke everyday, difficulty breathing",
+    "date_diagnosis": "22/11/2021",
+    "date_ctscan": "23/11/2021"
+  },
+  {
+    "id": 3,
+    "name": "Nguyen Van C",
+    "age": 27,
+    "src": "https://onewelbeck.com/lung-health/wp-content/uploads/sites/12/2020/10/lung-scan-article-s.jpg",
+    "address": "Hanoi",
+    "phone": "0987677956",
+    "sympstoms": "Dry cough, difficulty breathing, chest pain",
+    "date_diagnosis": "25/11/2021",
+    "date_ctscan": "26/11/2021"
+  },
+  {
+    "id": 4,
+    "name": "Nguyen Van D",
+    "age": 40,
+    "src": "https://c8.alamy.com/comp/2GYNGYH/lung-cancer-ct-scan-2GYNGYH.jpg",
+    "address": "Hanoi",
+    "phone": "0983471180",
+    "sympstoms": "Chest pain, pneumonia",
+    "date_diagnosis": "25/11/2021",
+    "date_ctscan": "26/11/2021"
+  }
+]
