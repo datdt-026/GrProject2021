@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
 const Home = () => {
   return (
-    <View>
-      <Text>dm qhieu</Text>
-    </View>
+    <SafeAreaView>
+      <Text>xin lỗi quốc hiếu</Text>
+    </SafeAreaView>
   );
 };
 
