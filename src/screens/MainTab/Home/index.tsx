@@ -9,9 +9,12 @@ import {
   View,
 } from 'react-native';
 
+import {useNavigation} from '@react-navigation/native';
+
 const Home = () => {
+  const navigation = useNavigation();
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <ScrollView>
       <View style={{flex: 1, marginTop: 16, alignItems: 'center'}}>
         <Text style={{fontSize: 30, fontWeight: 'bold'}}>
           Lung Cancer Care System
@@ -42,7 +45,7 @@ const Home = () => {
           <Text style={{fontSize: 16}}>View More</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 

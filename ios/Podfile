@@ -12,6 +12,10 @@ target 'GrProject' do
     :hermes_enabled => false
   )
 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
   target 'GrProjectTests' do
     inherit! :complete
     # Pods for testing

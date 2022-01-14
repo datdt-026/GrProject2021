@@ -1,10 +1,10 @@
-const Assets = {
-  ic_filter: require('../assets/ic_filter.png'),
-  ic_notification: require('../assets/ic_notification.png'),
-  ic_search: require('../assets/ic_search.png'),
-  img_banner: require('../assets/img_banner.png'),
-  img_healthhy: require('../assets/img_healthhy.png'),
-  img_vegan: require('../assets/img_vegan.png'),
-};
+import {Assets} from 'react-native-ui-lib';
 
+Assets.loadAssetsGroup('iconsTab', {
+  Home: require('../assets/Home.png'),
+  Chat: require('../assets/Chat.png'),
+  Doctor: require('../assets/Doctor.png'),
+  Calendar: require('../assets.Calendar.png'),
+  User: require('../assets/User.png'),
+});
 export default Assets;
