@@ -1,7 +1,7 @@
 import {Colors} from 'react-native-ui-lib';
 
 Colors.loadColors({
-  primary: '#8E97FD',
+  primary: '#6574CF',
   textColor: '#3F414E',
   textColor1: '#000000',
   textColor2: '#A1A4B2',
@@ -11,7 +11,7 @@ Colors.loadColors({
   textColor6: '#7583CA',
   textColor7: '#98A1BD',
   textColor8: '#F6F1FB',
-  bgColor1: '#E5E5E5',
+  bgColor1: '#C9E7E5',
   bgColor2: '#03174C',
 });
 

@@ -39,7 +39,6 @@ const MainTab = () => {
           tabBarIcon: ({color}) => (
             <Image source={require('../assets/Home.png')} tintColor={color} />
           ),
-          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -49,14 +48,12 @@ const MainTab = () => {
           tabBarIcon: ({color}) => (
             <Image source={require('../assets/Chat.png')} tintColor={color} />
           ),
-          headerShown: false,
         }}
       />
       <Tab.Screen
         name="Doctor"
         component={Doctor}
         options={{
-          headerShown: false,
           tabBarIcon: ({color}) => (
             <Image source={require('../assets/Doctor.png')} tintColor={color} />
           ),
@@ -72,14 +69,12 @@ const MainTab = () => {
               tintColor={color}
             />
           ),
-          headerShown: false,
         }}
       />
       <Tab.Screen
         name="User"
         component={User}
         options={{
-          headerShown: false,
           tabBarIcon: ({color}) => (
             <Image source={require('../assets/User.png')} tintColor={color} />
           ),
