@@ -11,7 +11,8 @@ import {
   TextInput,
   SafeAreaView,
 } from 'react-native';
-
+import Header from '../../components/Header';
+import LinearGradient from 'react-native-linear-gradient';
 import Assets from '../../config/Assets';
 
 const Section = ({title, data}) => {
@@ -39,6 +40,7 @@ const Filter = ({route}) => {
   return (
     <View style={styles.spaceFlex}>
       <SafeAreaView style={{flex: 1}}>
+        <Header />
         {/* view search */}
         <View style={styles.containerSearch}>
           <Image source={Assets.ic_search} />
@@ -53,7 +55,7 @@ const Filter = ({route}) => {
         <Section title="Food" data={dataFilterFood} />
         <View style={{flex: 1}} />
 
-        {/* <LinearGradient
+        <LinearGradient
           colors={['#53E88B', '#15BE77']}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 1}}
@@ -61,7 +63,7 @@ const Filter = ({route}) => {
           <TouchableOpacity style={styles.btnSearch}>
             <Text style={styles.txtSearch}>Search</Text>
           </TouchableOpacity>
-        </LinearGradient> */}
+        </LinearGradient>
       </SafeAreaView>
     </View>
   );
