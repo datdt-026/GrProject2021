@@ -1,10 +1,6 @@
-import {Assets} from 'react-native-ui-lib';
-
-Assets.loadAssetsGroup('iconsTab', {
-  Home: require('../assets/Home.png'),
-  Chat: require('../assets/Chat.png'),
-  Doctor: require('../assets/Doctor.png'),
-  Calendar: require('../assets/Calendar.png'),
-  User: require('../assets/User.png'),
-});
+const Assets = {
+  img_banner1: require('../assets/banner1.png'),
+  img_banner2: require('../assets/banner2.png'),
+  img_banner3: require('../assets/banner3.png'),
+};
 export default Assets;
