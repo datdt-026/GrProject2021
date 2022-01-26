@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {Text, View} from 'react-native-ui-lib';
 import {useNavigation} from '@react-navigation/native';
-import Header from '../../Test/header';
+import Header from '../../components/header';
 import * as Iconly from 'react-native-iconly';
 
 const witdh = Dimensions.get('window').width;

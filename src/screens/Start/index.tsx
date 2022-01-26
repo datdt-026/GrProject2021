@@ -42,7 +42,7 @@ const WelcomeScreen = () => {
           marginRight: 16,
           flexDirection: 'row',
         }}
-        onPress={() => navigate('MainTab')}>
+        onPress={() => navigate('SignIn')}>
         <Text style={{marginRight: 16}}>NEXT</Text>
         <Image source={require('../../assets/icon/ic_arrowR.png')} />
       </TouchableOpacity>

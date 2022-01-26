@@ -17,7 +17,8 @@ const User = () => {
       </Text>
       <Text>
         - Developer: {'\n'} + Do Thanh Dat {'\n'} + Trinh Quoc Hieu {'\n'} +
-        Nguyen Tan Dung {'\n'} + Nguyen Hoang Son {'\n'} + Nguyen Khang Thai
+        Nguyen Tan Dung {'\n'} + Nguyen Hoang Son {'\n'} + Nguyen Khang Thai{' '}
+        {'\n'} + Bui Duy Hai
       </Text>
     </View>
   );

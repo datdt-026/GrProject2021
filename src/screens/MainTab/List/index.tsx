@@ -32,48 +32,55 @@ const List = () => {
   }, []);
 
   return (
-    <View style={{flex: 1}}>
-      <View
-        style={{
-          flexDirection: 'row',
-        }}>
-        <Text style={styles.row}>ID</Text>
-        <Text style={styles.row}>Name</Text>
-        <Text style={styles.row}>Age</Text>
-        <Text style={styles.row}>Address</Text>
-        <Text style={styles.row}>Phone</Text>
-        {/* <Text style={styles.row}>Date of Diagnosis</Text>
-          <Text style={styles.row}>Date of CT Scan</Text> */}
+    <SafeAreaView style={{flex: 1}}>
+      <View>
+        <FlatList
+          data={data}
+          keyExtractor={({id}, index) => id.toString()}
+          style={{marginTop: 24}}
+          renderItem={({item}) => (
+            <View style={{padding: 12}}>
+              <Image
+                style={{
+                  width: 240,
+                  height: 200,
+                  borderRadius: 10,
+                  borderColor: 'black',
+                }}
+                source={{uri: `${item.src}`}}
+              />
+              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+                - ID: {item.id}
+              </Text>
+              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+                - Name: {item.name}
+              </Text>
+              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+                - Age: {item.age}
+              </Text>
+              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+                - Address: {item.address}
+              </Text>
+              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+                - Phone: {item.phone}
+              </Text>
+              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+                - Sympstoms: {item.sympstoms}
+              </Text>
+              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+                - Date of Diagnosis: {item.date_diagnosis}
+              </Text>
+              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+                - Date of CT Scan: {item.date_ctscan}
+              </Text>
+              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+                _______________
+              </Text>
+            </View>
+          )}
+        />
       </View>
-      <FlatList
-        data={data}
-        horizontal={false}
-        scrollEnabled={false}
-        keyExtractor={({id}, index) => id.toString()}
-        renderItem={({item}) => (
-          <View
-            style={{
-              flexDirection: 'row',
-              borderBottomWidth: 0.5,
-            }}>
-            <Text style={styles.row}>{item.id}</Text>
-            {/* <Image
-              style={{
-                width: 240,
-                height: 200,
-                borderRadius: 10,
-                borderColor: 'black',
-              }}
-              source={{uri: `${item.src}`}}
-            /> */}
-            <Text style={styles.row}>{item.name}</Text>
-            <Text style={styles.row}>{item.age}</Text>
-            <Text style={styles.row}>{item.address}</Text>
-            <Text style={styles.row}>{item.phone}</Text>
-          </View>
-        )}
-      />
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -4,11 +4,9 @@ import {StyleSheet, Text, View} from 'react-native';
 import Home from '../screens/MainTab/Home';
 import Patients from '../screens/MainTab/List';
 import * as Iconlypack from 'react-native-iconly';
-import Contact from '../screens/MainTab/User';
 import {Image, Colors} from 'react-native-ui-lib';
-import Doctor from '../screens/MainTab/List';
+import Doctor from '../screens/MainTab/Doctor';
 import User from '../screens/MainTab/User';
-import Chat from '../screens/MainTab/Doctor';
 import Calendar from '../screens/MainTab/Calendar';
 import List from '../screens/MainTab/List';
 

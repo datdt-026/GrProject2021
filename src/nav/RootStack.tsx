@@ -4,10 +4,14 @@ import {NavigationContainer} from '@react-navigation/native';
 import MainTab from './MainTab';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import WelcomeScreen from '../screens/Start';
+import SignIn from '../screens/Start/SignIn';
+import SignUp from '../screens/Start/SignUp';
 
 export type RootStackParamList = {
   WelcomeScreen: undefined;
   MainTab: undefined;
+  SignIn: undefined;
+  SignUp: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -15,16 +19,26 @@ const RootStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="WelcomeScreen"
           component={WelcomeScreen}
           options={{headerShown: false}}
-        />
+        /> */}
         <Stack.Screen
           name="MainTab"
           component={MainTab}
           options={{headerShown: false}}
         />
+        {/* <Stack.Screen
+          name="SignIn"
+          component={SignIn}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUp}
+          options={{headerShown: false}}
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

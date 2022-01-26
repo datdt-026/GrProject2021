@@ -27,8 +27,7 @@ const Banner = ({autoplay = true, dataBanner}: Props) => {
       <Swiper
         showsHorizontalScrollIndicator={false}
         autoplay={true}
-        autoplayTimeout={3}
-        autoplayDirection={true}
+        autoplayTimeout={4}
         loop
         paginationStyle={styles.paginationStyle}>
         {dataBanner.map((item, index) => {
