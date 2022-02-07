@@ -1,66 +1,133 @@
 import {
   Dimensions,
+  FlatList,
   Image,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
 import React from 'react';
+import ModalTester from './Modal';
+import {IDoctor} from '../../../../data/inforDoctor';
 
 const width = Dimensions.get('window').width;
 
-const Card = () => {
-  return (
-    <View>
-      <TouchableOpacity>
-        <View
-          style={{
-            backgroundColor: 'white',
-            width: 347,
-            height: 103,
-            borderRadius: 10,
-            alignItems: 'center',
-            flexDirection: 'row',
-            marginHorizontal: 24,
-            marginTop: 12,
-          }}>
-          <Image
-            source={require('../../../../../zau.jpg')}
-            style={{marginLeft: 16, width: 60, height: 60}}
-          />
-          <View style={{marginLeft: 16}}>
-            <Text
-              style={{
-                color: '#09051C',
-                fontSize: 15,
-                fontWeight: '400',
-                lineHeight: 19.6,
-              }}>
-              Chikanso Chima
-            </Text>
+const DATA = [
+  {
+    id: 0,
+    name: 'Bac Si Hai',
+    img: require('../../../../../zau.jpg'),
+    job: 'Pulmonologist',
 
+    phone: '0973471150',
+  },
+  {
+    id: 1,
+    name: 'Bac Si Link',
+    img: require('../../../../../3.jpg'),
+    job: 'Pulmonologist',
+
+    phone: '0973471150',
+  },
+  {
+    id: 2,
+    name: 'Bac Si Hieu',
+    img: require('../../../../../zau.jpg'),
+    job: 'Pulmonologist',
+
+    phone: '0973471150',
+  },
+  {
+    id: 3,
+    name: 'Bac Si Dung',
+    img: require('../../../../../zau.jpg'),
+    job: 'Pulmonologist',
+
+    phone: '0973471150',
+  },
+  {
+    id: 4,
+    name: 'Bac Si Damn son',
+    img: require('../../../../../zau.jpg'),
+    job: 'Pulmonologist',
+
+    phone: '0973471150',
+  },
+  {
+    id: 5,
+    name: 'Bac Si Damn son',
+    img: require('../../../../../zau.jpg'),
+    job: 'Pulmonologist',
+
+    phone: '0973471150',
+  },
+];
+
+const Card = () => {
+  // const [data, setData] = React.useState<IDoctor[]>([]);
+  // const [loading, setLoading] = React.useState<boolean>(true);
+
+  return (
+    <View style={{flex: 1}}>
+      <FlatList
+        data={DATA}
+        keyExtractor={({id}, index) => id.toString()}
+        renderItem={({item}) => (
+          <TouchableOpacity>
             <View
               style={{
-                flexDirection: 'row',
+                backgroundColor: 'white',
+                width: 347,
+                height: 103,
+                borderRadius: 10,
                 alignItems: 'center',
+                flexDirection: 'row',
+                marginHorizontal: 24,
+                marginTop: 12,
+                marginBottom: 12,
               }}>
-              <Text
+              <Image
+                source={item.img}
                 style={{
-                  color: '#3B3B3B',
-                  opacity: 0.3,
-                }}>
-                Ophthalmologist
-              </Text>
-              <TouchableOpacity style={{marginLeft: 70}}>
-                <Text>Buy Again</Text>
-              </TouchableOpacity>
-            </View>
+                  marginLeft: 16,
+                  width: 60,
+                  height: 60,
+                  borderRadius: 30,
+                }}
+              />
+              <View style={{marginLeft: 16}}>
+                <Text
+                  style={{
+                    color: '#09051C',
+                    fontSize: 15,
+                    fontWeight: '400',
+                    lineHeight: 19.6,
+                  }}>
+                  {item.name}
+                </Text>
 
-            <Text> ⦿ 68km away</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}>
+                  <Text
+                    style={{
+                      color: '#3B3B3B',
+                      opacity: 0.3,
+                    }}>
+                    {item.job}
+                  </Text>
+                </View>
+
+                <Text> {item.phone}</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        )}
+      />
     </View>
   );
 };

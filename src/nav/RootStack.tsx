@@ -6,12 +6,16 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import WelcomeScreen from '../screens/Start';
 import SignIn from '../screens/Start/SignIn';
 import SignUp from '../screens/Start/SignUp';
+import Doctor from '../screens/MainTab/Doctor';
+import Hospitals from '../screens/Hospitals/Hospitals';
 
 export type RootStackParamList = {
   WelcomeScreen: undefined;
   MainTab: undefined;
   SignIn: undefined;
   SignUp: undefined;
+  Doctor: undefined;
+  Hospitals: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -39,6 +43,16 @@ const RootStack = () => {
           component={SignUp}
           options={{headerShown: false}}
         /> */}
+        <Stack.Screen
+          name="Doctor"
+          component={Doctor}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Hospitals"
+          component={Hospitals}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

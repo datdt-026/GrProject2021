@@ -8,14 +8,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Text, View} from 'react-native-ui-lib';
-import {useNavigation} from '@react-navigation/native';
 import Header from '../../components/header';
 import * as Iconly from 'react-native-iconly';
-
-const witdh = Dimensions.get('window').width;
+import {useNavigation, NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../../nav/RootStack';
 
 const Home = () => {
-  const navigation = useNavigation();
+  const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
   return (
     <View style={{flex: 1, backgroundColor: '#F2F2F2'}}>
       <Header />
@@ -52,7 +51,7 @@ const Home = () => {
         <View>
           <View style={{flexDirection: 'row'}}>
             {/* doctor */}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate('Doctor')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -75,7 +74,7 @@ const Home = () => {
             </TouchableOpacity>
 
             {/* clinic */}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate('Hospitals')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -89,7 +88,9 @@ const Home = () => {
                   style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
                 />
                 <View style={{marginTop: 32, marginHorizontal: 12}}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Clinic</Text>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                    Hospitals
+                  </Text>
                   <Text style={{fontSize: 12}}>Short Description</Text>
                 </View>
               </View>

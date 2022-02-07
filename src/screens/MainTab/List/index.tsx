@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import urls from '../../../config/Api';
+import Header from './components/header';
 
 import {IPatient} from '../../../data/information';
 
@@ -33,11 +34,12 @@ const List = () => {
 
   return (
     <SafeAreaView style={{flex: 1}}>
+      <Header />
+
       <View>
         <FlatList
           data={data}
           keyExtractor={({id}, index) => id.toString()}
-          style={{marginTop: 24}}
           renderItem={({item}) => (
             <View style={{padding: 12}}>
               <Image

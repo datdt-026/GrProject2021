@@ -2,8 +2,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import Home from '../screens/MainTab/Home';
-import Patients from '../screens/MainTab/List';
-import * as Iconlypack from 'react-native-iconly';
 import {Image, Colors} from 'react-native-ui-lib';
 import Doctor from '../screens/MainTab/Doctor';
 import User from '../screens/MainTab/User';
@@ -54,10 +52,7 @@ const MainTab = () => {
         component={List}
         options={{
           tabBarIcon: ({color}) => (
-            <Image
-              source={require('../assets/ic_list.png')}
-              tintColor={color}
-            />
+            <Image source={require('../assets/Chat.png')} tintColor={color} />
           ),
         }}
       />

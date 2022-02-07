@@ -20,7 +20,7 @@ const Header = () => {
           marginLeft: 24,
           color: '#FFF',
         }}>
-        Doctors
+        Hospitals
       </Text>
     </View>
   );
