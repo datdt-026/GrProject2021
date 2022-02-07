@@ -23,17 +23,17 @@ const RootStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="WelcomeScreen"
           component={WelcomeScreen}
           options={{headerShown: false}}
-        /> */}
+        />
         <Stack.Screen
           name="MainTab"
           component={MainTab}
           options={{headerShown: false}}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="SignIn"
           component={SignIn}
           options={{headerShown: false}}
@@ -42,7 +42,7 @@ const RootStack = () => {
           name="SignUp"
           component={SignUp}
           options={{headerShown: false}}
-        /> */}
+        />
         <Stack.Screen
           name="Doctor"
           component={Doctor}

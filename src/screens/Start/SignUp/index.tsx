@@ -9,16 +9,59 @@ import {
   Dimensions,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '../../../nav/RootStack';
+import { firebase } from '../../../firebase/config'
+import "firebase/auth";
+import "firebase/database";
+import "firebase/firestore";
+import "firebase/functions";
+import "firebase/storage";
 
+ 
 const width = Dimensions.get('window').width;
 
 const SignUp = () => {
   const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
+  const [NAME,  setNAME] = useState('')
+  const [EMAIL, setEMAIL] = useState('')
+  const [MOBILE, setMOBILE] = useState('')
+  const [PASSWORD, setPASSWORD] = useState('')
+
+  function addDataBase(NAME , EMAIL , MOBILE , PASSWORD) {
+    firebase
+              .auth()
+              .createUserWithEmailAndPassword(EMAIL , PASSWORD)
+              .then((response) => {
+                  //get data from server
+                  const uid = response.user.uid
+                  const data = {
+                      id: uid,
+                      NAME,
+                      MOBILE,
+                      EMAIL,
+                  };
+                  const usersRef = firebase.firestore().collection('users')
+                  usersRef
+                      .doc(uid)
+                      .set(data)
+                      .then(() => {
+                           navigate('MainTab');
+                      })
+                      .catch((error) => {
+                          alert(error)
+                      });
+              })
+              .catch((error) => {
+                  alert(error)
+          });
+      }
+
+
 
   return (
+    
     <View style={{flex: 1}}>
       <ScrollView>
         <ImageBackground
@@ -56,6 +99,8 @@ const SignUp = () => {
         <View style={{marginTop: 22, marginHorizontal: 32}}>
           <Text style={{fontSize: 16, fontWeight: 'bold'}}>NAME</Text>
           <TextInput
+          value={NAME}
+          onChangeText={(text) => setNAME(text)}
             style={{
               backgroundColor: '#E4E9F2',
               width: 327,
@@ -67,6 +112,8 @@ const SignUp = () => {
           />
           <Text style={{fontSize: 16, fontWeight: 'bold'}}>EMAIL</Text>
           <TextInput
+          value={EMAIL}
+          onChangeText={(text) => setEMAIL(text)}
             style={{
               backgroundColor: '#E4E9F2',
               width: 327,
@@ -76,8 +123,10 @@ const SignUp = () => {
             }}
             placeholder="Email"
           />
-          <Text style={{fontSize: 16, fontWeight: 'bold'}}>MOBILE NUMBER</Text>
+          <Text style={{fontSize: 16, fontWeight: 'bold'}}>MOBILE</Text>
           <TextInput
+          value={MOBILE}
+          onChangeText={(text) => setMOBILE(text)}
             style={{
               backgroundColor: '#E4E9F2',
               width: 327,
@@ -89,6 +138,8 @@ const SignUp = () => {
           />
           <Text style={{fontSize: 16, fontWeight: 'bold'}}>PASSWORD</Text>
           <TextInput
+          value={PASSWORD}
+          onChangeText={(text) => setPASSWORD(text)}
             style={{
               backgroundColor: '#E4E9F2',
               width: 327,
@@ -109,7 +160,8 @@ const SignUp = () => {
         </View>
 
         <View style={{marginTop: 30}}>
-          <TouchableOpacity
+          <TouchableOpacity onPress={()=>{ addDataBase( NAME, EMAIL , MOBILE , PASSWORD)}} 
+
             style={{
               height: 40,
               width: 327,

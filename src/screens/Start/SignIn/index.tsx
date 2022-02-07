@@ -8,14 +8,55 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '../../../nav/RootStack';
+import { firebase } from '../../../firebase/config'
+import "firebase/auth";
+import "firebase/database";
+import "firebase/firestore";
+import "firebase/functions";
+import "firebase/storage";
 
 const width = Dimensions.get('window').width;
 
 const SignIn = () => {
   const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
+
+   
+    const [EMAIL, setEMAIL] = useState('')
+    const [PASSWORD, setPASSWORD] = useState('')
+  
+  
+  
+    const onLoginPress = () => {
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(EMAIL, PASSWORD)
+            .then((response) => {
+                //if match then return user information
+                const uid = response.user.uid
+                const usersRef = firebase.firestore().collection('users')
+                usersRef
+                    .doc(uid)
+                    .get()
+                    .then(firestoreDocument => {
+                        if (!firestoreDocument.exists) {
+                            alert("User does not exist anymore.")
+                            return;
+                        }
+                        const user = firestoreDocument.data()
+                        navigate('MainTab')
+                    })
+                    .catch(error => {
+                        alert(error)
+                    });
+            })
+            .catch(error => {
+                alert(error)
+            })
+    }
+
 
   return (
     <View style={{flex: 1}}>
@@ -46,7 +87,7 @@ const SignIn = () => {
         </Text>
       </ImageBackground>
       <View style={{marginTop: 22, marginHorizontal: 32}}>
-        <Text style={{fontSize: 16, fontWeight: 'bold'}}>Email</Text>
+        <Text style={{fontSize: 16, fontWeight: 'bold'}}>EMAIL</Text>
         <TextInput
           style={{
             backgroundColor: '#E4E9F2',
@@ -55,9 +96,11 @@ const SignIn = () => {
             borderRadius: 8,
             marginVertical: 16,
           }}
-          placeholder="Email"
+          placeholder="EMAIL"
+          onChangeText={(text) => setEMAIL(text)}
+          autoCapitalize="none"
         />
-        <Text style={{fontSize: 16, fontWeight: 'bold'}}>Password</Text>
+        <Text style={{fontSize: 16, fontWeight: 'bold'}}>PASSWORD</Text>
         <TextInput
           style={{
             backgroundColor: '#E4E9F2',
@@ -66,7 +109,10 @@ const SignIn = () => {
             borderRadius: 8,
             marginVertical: 16,
           }}
-          placeholder="Password"
+          secureTextEntry
+          placeholder="PASSWORD"
+          onChangeText={(text) => setPASSWORD(text)}
+          autoCapitalize="none"
         />
       </View>
 
@@ -89,7 +135,8 @@ const SignIn = () => {
             borderRadius: 10,
             backgroundColor: '#6574CF',
           }}
-          onPress={() => navigate('MainTab')}>
+          onPress={()=>onLoginPress()}
+         >
           <Text style={{color: '#FFF', fontWeight: 'bold'}}>SIGN IN</Text>
         </TouchableOpacity>
         <View
