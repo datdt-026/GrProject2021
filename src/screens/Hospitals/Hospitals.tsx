@@ -17,19 +17,19 @@ const Hospitals = () => {
   return (
     <View style={{flex: 1}}>
       <Header />
-      <ImageBackground
-        source={require('../../assets/Frame.png')}
-        imageStyle={{borderRadius: 30}}
-        style={{
-          width: width - 24,
-          height: 100,
-          marginTop: 16,
-          marginHorizontal: 12,
-          borderRadius: 30,
-        }}>
-        <View style={{justifyContent: 'center', alignItems: 'flex-end'}}>
-          <Text style={styles.text}>Special Deal {'\n'}for october</Text>
-          <View style={{alignSelf: 'flex-end'}}>
+      <ScrollView>
+        <ImageBackground
+          source={require('../../assets/phoiTW.jpeg')}
+          imageStyle={{borderRadius: 30}}
+          style={{
+            width: width - 24,
+            height: 100,
+            marginTop: 16,
+            marginHorizontal: 12,
+            borderRadius: 30,
+          }}>
+          {/* <Text style={styles.text}>National Lung {'\n'} Hospital</Text> */}
+          <View style={{alignItems: 'flex-end', marginTop: 64}}>
             <TouchableOpacity
               style={{
                 width: 82,
@@ -39,12 +39,125 @@ const Hospitals = () => {
                 marginHorizontal: 48,
                 alignItems: 'center',
                 justifyContent: 'center',
-              }}>
-              <Text style={{}}>Contact</Text>
+              }}
+              onPress={() => alert('phone: 0973471150')}>
+              <Text>Contact</Text>
             </TouchableOpacity>
           </View>
-        </View>
-      </ImageBackground>
+        </ImageBackground>
+
+        <ImageBackground
+          source={require('../../assets/E.jpg')}
+          imageStyle={{borderRadius: 30}}
+          style={{
+            width: width - 24,
+            height: 100,
+            marginTop: 16,
+            marginHorizontal: 12,
+            borderRadius: 30,
+          }}>
+          {/* <Text style={styles.text}>National Lung {'\n'} Hospital</Text> */}
+          <View style={{alignItems: 'flex-end', marginTop: 64}}>
+            <TouchableOpacity
+              style={{
+                width: 82,
+                height: 32,
+                backgroundColor: '#FFF',
+                borderRadius: 10,
+                marginHorizontal: 48,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              onPress={() => alert('phone: 0973471150')}>
+              <Text>Contact</Text>
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
+
+        <ImageBackground
+          source={require('../../assets/phoiTW.jpeg')}
+          imageStyle={{borderRadius: 30}}
+          style={{
+            width: width - 24,
+            height: 100,
+            marginTop: 16,
+            marginHorizontal: 12,
+            borderRadius: 30,
+          }}>
+          {/* <Text style={styles.text}>National Lung {'\n'} Hospital</Text> */}
+          <View style={{alignItems: 'flex-end', marginTop: 64}}>
+            <TouchableOpacity
+              style={{
+                width: 82,
+                height: 32,
+                backgroundColor: '#FFF',
+                borderRadius: 10,
+                marginHorizontal: 48,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              onPress={() => alert('phone: 0973471150')}>
+              <Text>Contact</Text>
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
+
+        <ImageBackground
+          source={require('../../assets/phoiTW.jpeg')}
+          imageStyle={{borderRadius: 30}}
+          style={{
+            width: width - 24,
+            height: 100,
+            marginTop: 16,
+            marginHorizontal: 12,
+            borderRadius: 30,
+          }}>
+          {/* <Text style={styles.text}>National Lung {'\n'} Hospital</Text> */}
+          <View style={{alignItems: 'flex-end', marginTop: 64}}>
+            <TouchableOpacity
+              style={{
+                width: 82,
+                height: 32,
+                backgroundColor: '#FFF',
+                borderRadius: 10,
+                marginHorizontal: 48,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              onPress={() => alert('phone: 0973471150')}>
+              <Text>Contact</Text>
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
+
+        <ImageBackground
+          source={require('../../assets/phoiTW.jpeg')}
+          imageStyle={{borderRadius: 30}}
+          style={{
+            width: width - 24,
+            height: 100,
+            marginTop: 16,
+            marginHorizontal: 12,
+            borderRadius: 30,
+          }}>
+          {/* <Text style={styles.text}>National Lung {'\n'} Hospital</Text> */}
+          <View style={{alignItems: 'flex-end', marginTop: 64}}>
+            <TouchableOpacity
+              style={{
+                width: 82,
+                height: 32,
+                backgroundColor: '#FFF',
+                borderRadius: 10,
+                marginHorizontal: 48,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              onPress={() => alert('phone: 0973471150')}>
+              <Text>Contact</Text>
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
+      </ScrollView>
     </View>
   );
 };
@@ -55,7 +168,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#FFF',
+    color: 'black',
     marginHorizontal: 24,
   },
 });

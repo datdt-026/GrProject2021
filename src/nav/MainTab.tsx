@@ -7,6 +7,7 @@ import Doctor from '../screens/MainTab/Doctor';
 import User from '../screens/MainTab/User';
 import Calendar from '../screens/MainTab/Calendar';
 import List from '../screens/MainTab/List';
+import Chat from '../screens/Chat';
 
 export type MainTabParamLits = {
   Home: undefined;
@@ -48,8 +49,8 @@ const MainTab = () => {
         }}
       />
       <Tab.Screen
-        name="List"
-        component={List}
+        name="Chat"
+        component={Chat}
         options={{
           tabBarIcon: ({color}) => (
             <Image source={require('../assets/Chat.png')} tintColor={color} />

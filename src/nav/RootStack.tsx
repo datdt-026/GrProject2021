@@ -8,6 +8,7 @@ import SignIn from '../screens/Start/SignIn';
 import SignUp from '../screens/Start/SignUp';
 import Doctor from '../screens/MainTab/Doctor';
 import Hospitals from '../screens/Hospitals/Hospitals';
+import List from '../screens/MainTab/List';
 
 export type RootStackParamList = {
   WelcomeScreen: undefined;
@@ -16,6 +17,7 @@ export type RootStackParamList = {
   SignUp: undefined;
   Doctor: undefined;
   Hospitals: undefined;
+  List: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -51,6 +53,11 @@ const RootStack = () => {
         <Stack.Screen
           name="Hospitals"
           component={Hospitals}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="List"
+          component={List}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

@@ -11,6 +11,7 @@ import {
 import React from 'react';
 import ModalTester from './Modal';
 import {IDoctor} from '../../../../data/inforDoctor';
+import doc_urls from '../../../../config/Doctor';
 
 const width = Dimensions.get('window').width;
 
@@ -66,13 +67,26 @@ const DATA = [
 ];
 
 const Card = () => {
-  // const [data, setData] = React.useState<IDoctor[]>([]);
-  // const [loading, setLoading] = React.useState<boolean>(true);
+  const [data, setData] = React.useState<IDoctor[]>([]);
+  const [loading, setLoading] = React.useState<boolean>(true);
+
+  React.useEffect(() => {
+    fetch(doc_urls.doctor)
+      .then(response => response.json())
+      .then(doctors => {
+        console.log('json', doctors);
+        setData(doctors);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <View style={{flex: 1}}>
       <FlatList
-        data={DATA}
+        data={data}
         keyExtractor={({id}, index) => id.toString()}
         renderItem={({item}) => (
           <TouchableOpacity>
@@ -89,7 +103,7 @@ const Card = () => {
                 marginBottom: 12,
               }}>
               <Image
-                source={item.img}
+                source={{uri: `${item.img}`}}
                 style={{
                   marginLeft: 16,
                   width: 60,

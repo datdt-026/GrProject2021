@@ -1,9 +1,18 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 
 const witdh = Dimensions.get('window').width;
 
 const Header = () => {
+  const {goBack} = useNavigation();
+
   return (
     <View
       style={{
@@ -13,15 +22,17 @@ const Header = () => {
         justifyContent: 'center',
         alignItems: 'flex-start',
       }}>
-      <Text
-        style={{
-          fontSize: 30,
-          fontWeight: '700',
-          marginLeft: 24,
-          color: '#FFF',
-        }}>
-        Patients List
-      </Text>
+      <TouchableOpacity onPress={() => goBack()}>
+        <Text
+          style={{
+            fontSize: 30,
+            fontWeight: '700',
+            marginLeft: 24,
+            color: '#FFF',
+          }}>
+          ◀︎ Patients List
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };

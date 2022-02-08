@@ -99,7 +99,7 @@ const Home = () => {
 
           <View style={{flexDirection: 'row'}}>
             {/* Specialities */}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate('List')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -114,7 +114,7 @@ const Home = () => {
                 />
                 <View style={{marginTop: 32, marginHorizontal: 12}}>
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    Specialities
+                    Patients
                   </Text>
                   <Text style={{fontSize: 12}}>Short Description</Text>
                 </View>
