@@ -9,62 +9,8 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import ModalTester from './Modal';
 import {IDoctor} from '../../../../data/inforDoctor';
 import doc_urls from '../../../../config/Doctor';
-
-const width = Dimensions.get('window').width;
-
-const DATA = [
-  {
-    id: 0,
-    name: 'Bac Si Hai',
-    img: require('../../../../../zau.jpg'),
-    job: 'Pulmonologist',
-
-    phone: '0973471150',
-  },
-  {
-    id: 1,
-    name: 'Bac Si Link',
-    img: require('../../../../../3.jpg'),
-    job: 'Pulmonologist',
-
-    phone: '0973471150',
-  },
-  {
-    id: 2,
-    name: 'Bac Si Hieu',
-    img: require('../../../../../zau.jpg'),
-    job: 'Pulmonologist',
-
-    phone: '0973471150',
-  },
-  {
-    id: 3,
-    name: 'Bac Si Dung',
-    img: require('../../../../../zau.jpg'),
-    job: 'Pulmonologist',
-
-    phone: '0973471150',
-  },
-  {
-    id: 4,
-    name: 'Bac Si Damn son',
-    img: require('../../../../../zau.jpg'),
-    job: 'Pulmonologist',
-
-    phone: '0973471150',
-  },
-  {
-    id: 5,
-    name: 'Bac Si Damn son',
-    img: require('../../../../../zau.jpg'),
-    job: 'Pulmonologist',
-
-    phone: '0973471150',
-  },
-];
 
 const Card = () => {
   const [data, setData] = React.useState<IDoctor[]>([]);

@@ -168,7 +168,7 @@ const Home = () => {
             </TouchableOpacity>
 
             {/* article */}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate('Arcticle')}>
               <View
                 style={{
                   backgroundColor: '#FFF',

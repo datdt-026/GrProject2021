@@ -21,10 +21,11 @@ const WelcomeScreen = () => {
         <Text style={{fontSize: 40, fontWeight: '700', color: '#6D7BD1'}}>
           Welcome
         </Text>
-        <Text style={{fontSize: 32, fontWeight: '600'}}>to Digital Clinic</Text>
+        <Text style={{fontSize: 26, fontWeight: '500'}}>
+          to Remote Lung Cancer Diagnosis Application
+        </Text>
         <Text style={{fontSize: 16, fontWeight: '500'}}>
-          far far away, behind the word mountains, {'\n'}far from the countries
-          Volkalia and Consonantia, there live the blind texts
+          Helping Doctors in diagnosing for Patinents {'\n'}and giving advices
         </Text>
       </View>
       <View style={{marginTop: 100}}>

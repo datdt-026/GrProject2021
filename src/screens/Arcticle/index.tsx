@@ -1,10 +1,20 @@
 import React, {useState} from 'react';
-import {Button, Text, View, Image, Dimensions, ScrollView} from 'react-native';
+import {
+  Button,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  ScrollView,
+  TouchableOpacity,
+  ImageBackground,
+} from 'react-native';
 import Modal from 'react-native-modal';
+import Header from './components/header';
 
 const width = Dimensions.get('window').width;
 
-function ModalTester() {
+const Arcticle = () => {
   const [isModalVisible, setModalVisible] = useState(false);
 
   const toggleModal = () => {
@@ -13,13 +23,35 @@ function ModalTester() {
 
   return (
     <View style={{flex: 1}}>
-      <Button title="Show modal" onPress={toggleModal} />
-
+      {/* <Button title="Show modal" onPress={toggleModal} /> */}
+      <Header />
+      <View style={{alignItems: 'center', marginTop: 16}}>
+        <TouchableOpacity activeOpacity={0.6} onPress={toggleModal}>
+          <ImageBackground
+            source={require('../../assets/vaccine.png')}
+            imageStyle={{borderRadius: 10}}
+            style={{
+              width: 343,
+              height: 168,
+              justifyContent: 'flex-end',
+              alignItems: 'flex-end',
+            }}>
+            <View
+              style={{
+                alignItems: 'flex-end',
+              }}>
+              <Text style={{fontSize: 24, color: '#FFF', fontWeight: 'bold'}}>
+                Covid-19 Vaccine
+              </Text>
+            </View>
+          </ImageBackground>
+        </TouchableOpacity>
+      </View>
       <Modal isVisible={isModalVisible}>
         <View style={{flex: 1, backgroundColor: '#FFF'}}>
           <ScrollView>
             <Image
-              source={require('../../../../assets/vaccine.png')}
+              source={require('../../assets/vaccine.png')}
               style={{
                 width: 280,
                 height: 144,
@@ -59,12 +91,12 @@ function ModalTester() {
               countries, with about half of the doses purchased by high-income
               countries comprising 14% of the world's population.
             </Text>
-            <Button title="Hide modal" onPress={toggleModal} />
+            <Button title="Done" onPress={toggleModal} />
           </ScrollView>
         </View>
       </Modal>
     </View>
   );
-}
+};
 
-export default ModalTester;
+export default Arcticle;
