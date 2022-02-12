@@ -18,9 +18,24 @@ import {collection, doc, setDoc} from 'firebase/firestore';
 import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '../../../nav/RootStack';
+<<<<<<< HEAD
 
 const User = navigation => {
   const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
+=======
+
+<<<<<<< HEAD
+
+
+
+
+const User = () => {
+  const { navigate } = useNavigation<NavigationProp<RootStackParamList>>();
+=======
+const User = navigation => {
+  const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
+>>>>>>> a486b3e (only_chat_left)
+>>>>>>> temp-branch
 
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -55,8 +70,105 @@ const User = navigation => {
     });
   }, []);
 
+<<<<<<< HEAD
   return (
     <View
+=======
+<<<<<<< HEAD
+  return <View style={{
+    flex: 1,
+    flexDirection: "column"
+  }} >
+    <Header />
+    <View style={{
+
+      height: 300,
+      width: '100%'
+
+    }}>
+      <Image
+        source={require('./components/avatar.jpg')}
+        style={{
+          marginTop: 90,
+          marginLeft: 140,
+          width: 150,
+          height: 150,
+          borderRadius: 50,
+
+        }} />
+
+
+    </View>
+    <View style={{
+
+      flexDirection: 'row',
+      backgroundColor: '#87CEEB',
+      height: 50,
+      width: 200,
+      marginLeft: 115,
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
+      <Text style={{
+        fontSize: 25,
+        textAlign: 'center',
+
+      }}
+
+      >{name}</Text>
+
+    </View>
+    <View style={{
+      height: 80,
+      width: '100%',
+      flexDirection: 'row',
+    }}>
+      <Image
+        source={require('../../../assets/email.png')}
+        style={{
+          marginTop: 15,
+          marginLeft: 20,
+          width: 50,
+          height: 50,
+        }} />
+      <Text style={{
+        alignItems: 'center',
+        fontSize: 25,
+        marginTop: 25,
+        marginLeft: 25,
+      }} >{email}</Text>
+    </View>
+    <View style={{
+
+
+      height: 80,
+      width: '100%',
+      flexDirection: 'row'
+    }}>
+      <Image
+        source={require('../../../assets/phone.png')}
+        style={{
+          marginTop: 15,
+          marginLeft: 20,
+          width: 50,
+          height: 50,
+
+
+        }} />
+      <Text style={{
+        alignItems: 'center',
+        fontSize: 25,
+        marginTop: 25,
+        marginLeft: 25,
+      }} >{phone}</Text>
+    </View>
+    <TouchableOpacity
+      onPress={() => LogOut()}
+=======
+  return (
+    <View
+>>>>>>> a486b3e (only_chat_left)
+>>>>>>> temp-branch
       style={{
         flex: 1,
         flexDirection: 'column',
