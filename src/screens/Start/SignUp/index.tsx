@@ -9,10 +9,10 @@ import {
   Dimensions,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
-import {NavigationProp, useNavigation} from '@react-navigation/native';
-import {RootStackParamList} from '../../../nav/RootStack';
-import {firebase} from '../../../firebase/config';
+import React, { useState } from 'react';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../../../nav/RootStack';
+import { firebase } from '../../../firebase/config';
 import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/firestore';
@@ -22,7 +22,7 @@ import 'firebase/storage';
 const width = Dimensions.get('window').width;
 
 const SignUp = () => {
-  const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
+  const { navigate } = useNavigation<NavigationProp<RootStackParamList>>();
   const [NAME, setNAME] = useState('');
   const [EMAIL, setEMAIL] = useState('');
   const [MOBILE, setMOBILE] = useState('');
@@ -40,6 +40,7 @@ const SignUp = () => {
           NAME,
           MOBILE,
           EMAIL,
+          ROLES: "Patient",
         };
         const usersRef = firebase.firestore().collection('users');
         usersRef
@@ -58,7 +59,7 @@ const SignUp = () => {
   }
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <ScrollView>
         <ImageBackground
           source={require('../../../assets/Sign/backgr.png')}
@@ -68,7 +69,7 @@ const SignUp = () => {
           }}>
           <Image
             source={require('../../../assets/Sign/logo.png')}
-            style={{marginTop: 42, marginLeft: 32}}
+            style={{ marginTop: 42, marginLeft: 32 }}
           />
 
           <Text
@@ -92,8 +93,8 @@ const SignUp = () => {
           </Text>
         </ImageBackground>
 
-        <View style={{marginTop: 22, marginHorizontal: 32}}>
-          <Text style={{fontSize: 16, fontWeight: 'bold'}}>NAME</Text>
+        <View style={{ marginTop: 22, marginHorizontal: 32 }}>
+          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>NAME</Text>
           <TextInput
             value={NAME}
             onChangeText={text => setNAME(text)}
@@ -106,7 +107,7 @@ const SignUp = () => {
             }}
             placeholder="Name"
           />
-          <Text style={{fontSize: 16, fontWeight: 'bold'}}>EMAIL</Text>
+          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>EMAIL</Text>
           <TextInput
             value={EMAIL}
             onChangeText={text => setEMAIL(text)}
@@ -119,7 +120,7 @@ const SignUp = () => {
             }}
             placeholder="Email"
           />
-          <Text style={{fontSize: 16, fontWeight: 'bold'}}>MOBILE</Text>
+          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>MOBILE</Text>
           <TextInput
             value={MOBILE}
             onChangeText={text => setMOBILE(text)}
@@ -132,7 +133,7 @@ const SignUp = () => {
             }}
             placeholder="Mobile Number"
           />
-          <Text style={{fontSize: 16, fontWeight: 'bold'}}>PASSWORD</Text>
+          <Text style={{ fontSize: 16, fontWeight: 'bold' }}>PASSWORD</Text>
           <TextInput
             value={PASSWORD}
             onChangeText={text => setPASSWORD(text)}
@@ -148,15 +149,15 @@ const SignUp = () => {
           />
         </View>
 
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
           <TouchableOpacity>
-            <Text style={{color: '#6574CF', fontSize: 14, fontWeight: 'bold'}}>
+            <Text style={{ color: '#6574CF', fontSize: 14, fontWeight: 'bold' }}>
               Forgot Password?
             </Text>
           </TouchableOpacity>
         </View>
 
-        <View style={{marginTop: 30}}>
+        <View style={{ marginTop: 30 }}>
           <TouchableOpacity
             onPress={() => {
               addDataBase(NAME, EMAIL, MOBILE, PASSWORD);
@@ -170,7 +171,7 @@ const SignUp = () => {
               borderRadius: 10,
               backgroundColor: '#6574CF',
             }}>
-            <Text style={{color: '#FFF', fontWeight: 'bold'}}>SIGN UP</Text>
+            <Text style={{ color: '#FFF', fontWeight: 'bold' }}>SIGN UP</Text>
           </TouchableOpacity>
           <View
             style={{
@@ -179,7 +180,7 @@ const SignUp = () => {
               alignSelf: 'center',
               marginTop: 12,
             }}>
-            <Text style={{fontWeight: 'bold'}}>OR</Text>
+            <Text style={{ fontWeight: 'bold' }}>OR</Text>
           </View>
           <View
             style={{
@@ -191,7 +192,7 @@ const SignUp = () => {
             <TouchableOpacity>
               <Image source={require('../../../assets/icon/ic_gg.png')} />
             </TouchableOpacity>
-            <TouchableOpacity style={{marginHorizontal: 24}}>
+            <TouchableOpacity style={{ marginHorizontal: 24 }}>
               <Image source={require('../../../assets/icon/ic_fb.png')} />
             </TouchableOpacity>
             <TouchableOpacity>

@@ -74,7 +74,7 @@ const Home = () => {
             </TouchableOpacity>
 
             {/* clinic */}
-            <TouchableOpacity onPress={() => navigate('Hospitals')}>
+            {/* <TouchableOpacity onPress={() => navigate('Hospitals')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -94,12 +94,12 @@ const Home = () => {
                   <Text style={{ fontSize: 12 }}>Short Description</Text>
                 </View>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
 
           <View style={{ flexDirection: 'row' }}>
             {/* Specialities */}
-            {/* <TouchableOpacity onPress={() => navigate('List')}>
+            <TouchableOpacity onPress={() => navigate('List')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -110,16 +110,16 @@ const Home = () => {
                 }}>
                 <Image
                   source={require('../../../assets/icon/ic_insurance.png')}
-                  style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
+                  style={{ borderRadius: 30, marginLeft: 12, marginTop: 12 }}
                 />
-                <View style={{marginTop: 32, marginHorizontal: 12}}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                <View style={{ marginTop: 32, marginHorizontal: 12 }}>
+                  <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
                     Patients
                   </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
+                  <Text style={{ fontSize: 12 }}>Short Description</Text>
                 </View>
               </View>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
 
             {/* lab */}
             <TouchableOpacity onPress={() => navigate('Medicine')}>
@@ -147,7 +147,7 @@ const Home = () => {
 
           <View style={{ flexDirection: 'row' }}>
             {/* Insurance */}
-            <TouchableOpacity onPress={() => navigate('Upload')}>
+            {/* <TouchableOpacity onPress={() => navigate('Upload')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -167,7 +167,7 @@ const Home = () => {
                   <Text style={{ fontSize: 12 }}>Short Description</Text>
                 </View>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             {/* article */}
             <TouchableOpacity onPress={() => navigate('Arcticle')}>

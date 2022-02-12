@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   View,
@@ -8,35 +8,23 @@ import {
   TextInput,
 } from 'react-native';
 import Header from './components/header';
-import {auth, firebase} from '../../../firebase/config';
+import { auth, firebase } from '../../../firebase/config';
 import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/firestore';
 import 'firebase/functions';
 import 'firebase/storage';
-import {collection, doc, setDoc} from 'firebase/firestore';
-import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
-import {NavigationProp, useNavigation} from '@react-navigation/native';
-import {RootStackParamList} from '../../../nav/RootStack';
-<<<<<<< HEAD
+import { collection, doc, setDoc } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../../../nav/RootStack';
+
 
 const User = navigation => {
-  const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
-=======
-
-<<<<<<< HEAD
-
-
-
-
-const User = () => {
   const { navigate } = useNavigation<NavigationProp<RootStackParamList>>();
-=======
-const User = navigation => {
-  const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
->>>>>>> a486b3e (only_chat_left)
->>>>>>> temp-branch
 
+
+  const [roles, setRoles] = useState('');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -65,110 +53,14 @@ const User = navigation => {
             setEmail(firestoreDocument.data().EMAIL);
             setName(firestoreDocument.data().NAME);
             setPhone(firestoreDocument.data().MOBILE);
+            setRoles(firestoreDocument.data().ROLES);
           }
         });
     });
   }, []);
-
-<<<<<<< HEAD
   return (
     <View
-=======
-<<<<<<< HEAD
-  return <View style={{
-    flex: 1,
-    flexDirection: "column"
-  }} >
-    <Header />
-    <View style={{
 
-      height: 300,
-      width: '100%'
-
-    }}>
-      <Image
-        source={require('./components/avatar.jpg')}
-        style={{
-          marginTop: 90,
-          marginLeft: 140,
-          width: 150,
-          height: 150,
-          borderRadius: 50,
-
-        }} />
-
-
-    </View>
-    <View style={{
-
-      flexDirection: 'row',
-      backgroundColor: '#87CEEB',
-      height: 50,
-      width: 200,
-      marginLeft: 115,
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}>
-      <Text style={{
-        fontSize: 25,
-        textAlign: 'center',
-
-      }}
-
-      >{name}</Text>
-
-    </View>
-    <View style={{
-      height: 80,
-      width: '100%',
-      flexDirection: 'row',
-    }}>
-      <Image
-        source={require('../../../assets/email.png')}
-        style={{
-          marginTop: 15,
-          marginLeft: 20,
-          width: 50,
-          height: 50,
-        }} />
-      <Text style={{
-        alignItems: 'center',
-        fontSize: 25,
-        marginTop: 25,
-        marginLeft: 25,
-      }} >{email}</Text>
-    </View>
-    <View style={{
-
-
-      height: 80,
-      width: '100%',
-      flexDirection: 'row'
-    }}>
-      <Image
-        source={require('../../../assets/phone.png')}
-        style={{
-          marginTop: 15,
-          marginLeft: 20,
-          width: 50,
-          height: 50,
-
-
-        }} />
-      <Text style={{
-        alignItems: 'center',
-        fontSize: 25,
-        marginTop: 25,
-        marginLeft: 25,
-      }} >{phone}</Text>
-    </View>
-    <TouchableOpacity
-      onPress={() => LogOut()}
-=======
-  return (
-    <View
->>>>>>> a486b3e (only_chat_left)
->>>>>>> temp-branch
       style={{
         flex: 1,
         flexDirection: 'column',
@@ -200,7 +92,9 @@ const User = navigation => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <Text>{name}</Text>
+        <Text style={{
+          fontSize: 25,
+        }}>{name}</Text>
       </View>
       <View
         style={{
@@ -217,7 +111,12 @@ const User = navigation => {
             height: 50,
           }}
         />
-        <Text style={{alignItems: 'center'}}>{email}</Text>
+        <Text style={{
+          alignItems: 'center',
+          fontSize: 25,
+          marginLeft: 15,
+          marginTop: 15,
+        }}>{email}</Text>
       </View>
       <View
         style={{
@@ -234,7 +133,25 @@ const User = navigation => {
             height: 50,
           }}
         />
-        <Text>{phone}</Text>
+        <Text style={{
+          alignItems: 'center',
+          fontSize: 25,
+          marginLeft: 15,
+          marginTop: 15,
+        }}>{phone}</Text>
+      </View>
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+
+      }}>
+        <Text style={{
+          alignItems: 'center',
+          fontSize: 25,
+          marginLeft: 15,
+          marginTop: 15,
+        }}>{roles}</Text>
+
       </View>
       <TouchableOpacity
         onPress={() => LogOut()}

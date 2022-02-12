@@ -11,19 +11,29 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
+import {
+  getFirestore,
+  query,
+  getDocs,
+  collection,
+  doc,
+  setDoc,
+  where,
+  addDoc,
+} from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCtCNKDS1sh_Dp8eSUj8pGIry1WeC1Rjac",
-    authDomain: "group-project-10e8a.firebaseapp.com",
-    projectId: "group-project-10e8a",
-    storageBucket: "group-project-10e8a.appspot.com",
-    messagingSenderId: "606698276347",
-    appId: "1:606698276347:web:f017e84e57af7566b1b75e",
-    measurementId: "G-EF1MHYBEWD"
+  apiKey: "AIzaSyBeVP89fw7lJ1MrPCJhyniXbKjvbB4KwdQ",
+  authDomain: "lungcancer-a501d.firebaseapp.com",
+  projectId: "lungcancer-a501d",
+  storageBucket: "lungcancer-a501d.appspot.com",
+  messagingSenderId: "870074827032",
+  appId: "1:870074827032:web:fabf8b71c7898585c0de6d",
+  measurementId: "G-F19X9FE8HE"
 };
 
 
@@ -38,5 +48,5 @@ if (firebase.apps.length === 0) {
 }
 
 const auth = getAuth(app);
-
-export { firebase, auth };
+const db = getFirestore(app);
+export { firebase, auth, db };
