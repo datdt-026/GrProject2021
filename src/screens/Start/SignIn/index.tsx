@@ -45,8 +45,25 @@ const SignIn = () => {
               alert("User does not exist anymore.")
               return;
             }
+            switch (firestoreDocument.data().ROLES) {
+              case "Patient":
+                alert("You are Patient");
 
-            navigate('MainTab')
+                navigate('MainTab');
+                break;
+              case "Doctor":
+                alert("You are Doctor");
+                navigate('DoctorPage');
+                break;
+              case "Admin":
+                alert("Welcome Manager");
+                navigate('AdminSrc');
+                break;
+              default:
+                alert("Wrong");
+                break;
+            }
+            console.log(firestoreDocument.data().Roles)
           })
           .catch(error => {
             alert(error)

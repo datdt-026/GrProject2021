@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import MainTab from './MainTab';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from '../screens/Start';
 import SignIn from '../screens/Start/SignIn';
 import SignUp from '../screens/Start/SignUp';
@@ -12,6 +12,8 @@ import List from '../screens/MainTab/List';
 import Arcticle from '../screens/Arcticle';
 import Upload from '../screens/Upload/Upload';
 import Medicine from '../screens/Medicine/Medicine';
+import DoctorPage from '../screens/MainTab/DoctorPage';
+import AdminSrc from '../screens/MainTab/AdminSrc';
 
 export type RootStackParamList = {
   WelcomeScreen: undefined;
@@ -24,6 +26,8 @@ export type RootStackParamList = {
   Arcticle: undefined;
   Upload: undefined;
   Medicine: undefined;
+  DoctorPage: undefined;
+  AdminSrc: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -31,17 +35,17 @@ const RootStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="WelcomeScreen"
           component={WelcomeScreen}
           options={{ headerShown: false }}
-        /> */}
+        />
         <Stack.Screen
           name="MainTab"
           component={MainTab}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="SignIn"
           component={SignIn}
           options={{ headerShown: false }}
@@ -50,36 +54,46 @@ const RootStack = () => {
           name="SignUp"
           component={SignUp}
           options={{ headerShown: false }}
-        /> */}
+        />
         <Stack.Screen
           name="Doctor"
           component={Doctor}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Hospitals"
           component={Hospitals}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="List"
           component={List}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Arcticle"
           component={Arcticle}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Upload"
           component={Upload}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Medicine"
           component={Medicine}
-          options={{headerShown: false}}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="DoctorPage"
+          component={DoctorPage}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="AdminSrc"
+          component={AdminSrc}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
