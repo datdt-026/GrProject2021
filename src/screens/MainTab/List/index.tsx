@@ -33,15 +33,14 @@ const List = () => {
   }, []);
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <View style={{flex: 1}}>
       <Header />
-
-      <View>
+      <View style={{flex: 1}}>
         <FlatList
           data={data}
           keyExtractor={({id}, index) => id.toString()}
           renderItem={({item}) => (
-            <View style={{padding: 12}}>
+            <View style={{margin: 12}}>
               <Image
                 style={{
                   width: 240,
@@ -75,14 +74,19 @@ const List = () => {
               <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
                 - Date of CT Scan: {item.date_ctscan}
               </Text>
-              <Text style={{color: '#A1A4B2', marginTop: 5, textAlign: 'left'}}>
+              <Text
+                style={{
+                  color: '#A1A4B2',
+                  marginTop: 5,
+                  textAlign: 'left',
+                }}>
                 _______________
               </Text>
             </View>
           )}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Text, View} from 'react-native-ui-lib';
-import Header from '../../components/header';
+import Header from './components/header';
 import * as Iconly from 'react-native-iconly';
 import {useNavigation, NavigationProp} from '@react-navigation/native';
 import {RootStackParamList} from '../../../nav/RootStack';
@@ -109,7 +109,7 @@ const Home = () => {
                   marginLeft: 22,
                 }}>
                 <Image
-                  source={require('../../../assets/icon/ic_specialities.png')}
+                  source={require('../../../assets/icon/ic_insurance.png')}
                   style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
                 />
                 <View style={{marginTop: 32, marginHorizontal: 12}}>
@@ -122,7 +122,7 @@ const Home = () => {
             </TouchableOpacity>
 
             {/* lab */}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate('Medicine')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -136,7 +136,9 @@ const Home = () => {
                   style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
                 />
                 <View style={{marginTop: 32, marginHorizontal: 12}}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Labs</Text>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                    Medicine
+                  </Text>
                   <Text style={{fontSize: 12}}>Short Description</Text>
                 </View>
               </View>
@@ -145,7 +147,7 @@ const Home = () => {
 
           <View style={{flexDirection: 'row'}}>
             {/* Insurance */}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate('Upload')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -155,12 +157,12 @@ const Home = () => {
                   marginLeft: 22,
                 }}>
                 <Image
-                  source={require('../../../assets/icon/ic_insurance.png')}
+                  source={require('../../../assets/icon/ic_specialities.png')}
                   style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
                 />
                 <View style={{marginTop: 32, marginHorizontal: 12}}>
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    Insurance
+                    Upload Image
                   </Text>
                   <Text style={{fontSize: 12}}>Short Description</Text>
                 </View>

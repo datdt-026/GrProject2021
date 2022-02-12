@@ -34,8 +34,6 @@ const App: React.FC = () => {
   const [items, setItems] = useState<{[key: string]: Post[]}>({});
 
   useEffect(() => {
-    // run once
-
     const getData = async () => {
       const response = await fetch(
         'https://61a718ea8395690017be94dc.mockapi.io/Calendar',
@@ -138,7 +136,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     marginRight: 10,
-    marginTop: 17,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
