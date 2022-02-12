@@ -16,7 +16,7 @@ import { RootStackParamList } from '../../../nav/RootStack';
 
 
 
-const User = (navigation) => {
+const User = () => {
   const { navigate } = useNavigation<NavigationProp<RootStackParamList>>();
 
   const [email, setEmail] = useState('');
@@ -85,7 +85,13 @@ const User = (navigation) => {
       alignItems: 'center',
       justifyContent: 'center',
     }}>
-      <Text>{name}</Text>
+      <Text style={{
+        fontSize: 25,
+        textAlign: 'center',
+
+      }}
+
+      >{name}</Text>
 
     </View>
     <View style={{
@@ -101,7 +107,12 @@ const User = (navigation) => {
           width: 50,
           height: 50,
         }} />
-      <Text style={{ alignItems: 'center' }} >{email}</Text>
+      <Text style={{
+        alignItems: 'center',
+        fontSize: 25,
+        marginTop: 25,
+        marginLeft: 25,
+      }} >{email}</Text>
     </View>
     <View style={{
 
@@ -120,7 +131,12 @@ const User = (navigation) => {
 
 
         }} />
-      <Text>{phone}</Text>
+      <Text style={{
+        alignItems: 'center',
+        fontSize: 25,
+        marginTop: 25,
+        marginLeft: 25,
+      }} >{phone}</Text>
     </View>
     <TouchableOpacity
       onPress={() => LogOut()}
