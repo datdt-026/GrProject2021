@@ -10,6 +10,8 @@ import Doctor from '../screens/MainTab/Doctor';
 import Hospitals from '../screens/Hospitals/Hospitals';
 import List from '../screens/MainTab/List';
 import Arcticle from '../screens/Arcticle';
+import Upload from '../screens/Upload/Upload';
+import Medicine from '../screens/Medicine/Medicine';
 
 export type RootStackParamList = {
   WelcomeScreen: undefined;
@@ -20,6 +22,8 @@ export type RootStackParamList = {
   Hospitals: undefined;
   List: undefined;
   Arcticle: undefined;
+  Upload: undefined;
+  Medicine: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -66,6 +70,16 @@ const RootStack = () => {
           name="Arcticle"
           component={Arcticle}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Upload"
+          component={Upload}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Medicine"
+          component={Medicine}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
