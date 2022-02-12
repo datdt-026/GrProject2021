@@ -15,6 +15,7 @@ import { RootStackParamList } from '../../../nav/RootStack';
 
 
 
+
 const User = (navigation) => {
   const { navigate } = useNavigation<NavigationProp<RootStackParamList>>();
 
@@ -44,7 +45,7 @@ const User = (navigation) => {
           else {
             setEmail(firestoreDocument.data().EMAIL)
             setName(firestoreDocument.data().NAME)
-            setPhone(firestoreDocument.data().PHONE)
+            setPhone(firestoreDocument.data().MOBILE)
           }
         })
     })
@@ -84,12 +85,13 @@ const User = (navigation) => {
       alignItems: 'center',
       justifyContent: 'center',
     }}>
-      <Text>{User.name}</Text>
+      <Text>{name}</Text>
 
     </View>
     <View style={{
       height: 80,
       width: '100%',
+      flexDirection: 'row',
     }}>
       <Image
         source={require('../../../assets/email.png')}
@@ -99,14 +101,14 @@ const User = (navigation) => {
           width: 50,
           height: 50,
         }} />
-      <Text></Text>
+      <Text style={{ alignItems: 'center' }} >{email}</Text>
     </View>
     <View style={{
 
 
       height: 80,
       width: '100%',
-
+      flexDirection: 'row'
     }}>
       <Image
         source={require('../../../assets/phone.png')}
@@ -117,8 +119,8 @@ const User = (navigation) => {
           height: 50,
 
 
-        }}></Image>
-
+        }} />
+      <Text>{phone}</Text>
     </View>
     <TouchableOpacity
       onPress={() => LogOut()}
