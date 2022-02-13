@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
   ScrollView,
+  SafeAreaView
 } from 'react-native';
 import React from 'react';
 import Header from './components/header';
@@ -15,7 +16,7 @@ const width = Dimensions.get('window').width;
 
 const Hospitals = () => {
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1}}>
       <Header />
       <ScrollView>
         <ImageBackground
@@ -158,7 +159,7 @@ const Hospitals = () => {
           </View>
         </ImageBackground>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

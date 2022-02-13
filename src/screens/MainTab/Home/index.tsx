@@ -16,7 +16,7 @@ import { RootStackParamList } from '../../../nav/RootStack';
 const Home = () => {
   const { navigate } = useNavigation<NavigationProp<RootStackParamList>>();
   return (
-    <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
       <Header />
       <View>
         <TouchableOpacity>
@@ -194,7 +194,7 @@ const Home = () => {
           </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

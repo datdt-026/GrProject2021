@@ -16,7 +16,7 @@ import { RootStackParamList } from '../../../nav/RootStack';
 const Home = () => {
   const { navigate } = useNavigation<NavigationProp<RootStackParamList>>();
   return (
-    <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
       <Header />
       <View>
         <TouchableOpacity>
@@ -114,9 +114,9 @@ const Home = () => {
                 />
                 <View style={{ marginTop: 32, marginHorizontal: 12 }}>
                   <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
-                    Patients
+                    List
                   </Text>
-                  <Text style={{ fontSize: 12 }}>Short Description</Text>
+                  <Text style={{ fontSize: 12 }}>List</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -170,7 +170,7 @@ const Home = () => {
             </TouchableOpacity> */}
 
             {/* article */}
-            <TouchableOpacity onPress={() => navigate('Arcticle')}>
+            <TouchableOpacity onPress={() => navigate('Article')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -185,7 +185,7 @@ const Home = () => {
                 />
                 <View style={{ marginTop: 32, marginHorizontal: 12 }}>
                   <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
-                    Related Arcticles
+                    Related Articles
                   </Text>
                   <Text style={{ fontSize: 12 }}>Short Description</Text>
                 </View>
@@ -194,7 +194,7 @@ const Home = () => {
           </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

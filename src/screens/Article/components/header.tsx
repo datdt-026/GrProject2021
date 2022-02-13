@@ -30,7 +30,7 @@ const Header = () => {
             marginLeft: 24,
             color: '#FFF',
           }}>
-          ◀︎ Arcticle
+          ◀︎ Articles
         </Text>
       </TouchableOpacity>
     </View>

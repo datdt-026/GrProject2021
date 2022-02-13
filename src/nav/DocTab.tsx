@@ -8,11 +8,12 @@ import User from '../screens/MainTab/User';
 import Calendar from '../screens/MainTab/Calendar';
 import List from '../screens/MainTab/List';
 import Chat from '../screens/Chat';
-import DoctorPage from '../screens/MainTab/DoctorPage'
-import Admin from '../screens/MainTab/AdminSrc'
+import DoctorPage from '../screens/MainTab/DoctorPage';
+import ChatDoc from '../screens/MainTab/DoctorPage/ChatDoc';
+import Admin from '../screens/MainTab/AdminSrc';
 
 export type MainTabParamLits = {
-  Home: undefined;
+  DoctorPage: undefined;
   List: undefined;
   Doctor: undefined;
   Calendar: undefined;
@@ -21,7 +22,7 @@ export type MainTabParamLits = {
 
 const Tab = createBottomTabNavigator();
 
-const MainTab = () => {
+const DocTab = () => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -34,7 +35,7 @@ const MainTab = () => {
       }}>
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={DoctorPage}
         options={{
           tabBarIcon: ({ color }) => (
             <Image source={require('../assets/Home.png')} tintColor={color} />
@@ -52,7 +53,7 @@ const MainTab = () => {
       />
       <Tab.Screen
         name="Chat"
-        component={Chat}
+        component={ChatDoc}
         options={{
           tabBarIcon: ({ color }) => (
             <Image source={require('../assets/Chat.png')} tintColor={color} />
@@ -86,6 +87,6 @@ const MainTab = () => {
   );
 };
 
-export default MainTab;
+export default DocTab;
 
 const styles = StyleSheet.create({});

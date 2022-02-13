@@ -8,13 +8,14 @@ import {
   ScrollView,
   TouchableOpacity,
   ImageBackground,
+  SafeAreaView
 } from 'react-native';
 import Modal from 'react-native-modal';
 import Header from './components/header';
 
 const width = Dimensions.get('window').width;
 
-const Arcticle = () => {
+const Article = () => {
   const [isModalVisible, setModalVisible] = useState(false);
 
   const toggleModal = () => {
@@ -22,7 +23,7 @@ const Arcticle = () => {
   };
 
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1}}>
       {/* <Button title="Show modal" onPress={toggleModal} /> */}
       <Header />
       <View style={{alignItems: 'center', marginTop: 16}}>
@@ -47,6 +48,29 @@ const Arcticle = () => {
           </ImageBackground>
         </TouchableOpacity>
       </View>
+      <View style={{alignItems: 'center', marginTop: 16}}>
+        <TouchableOpacity activeOpacity={0.6} onPress={toggleModal}>
+          <ImageBackground
+            source={require('../../assets/vaccine.png')}
+            imageStyle={{borderRadius: 10}}
+            style={{
+              width: 343,
+              height: 168,
+              justifyContent: 'flex-end',
+              alignItems: 'flex-end',
+            }}>
+            <View
+              style={{
+                alignItems: 'flex-end',
+              }}>
+              <Text style={{fontSize: 24, color: '#FFF', fontWeight: 'bold'}}>
+                Covid-19 Vaccine
+              </Text>
+            </View>
+          </ImageBackground>
+        </TouchableOpacity>
+      </View>
+
       <Modal isVisible={isModalVisible}>
         <View style={{flex: 1, backgroundColor: '#FFF'}}>
           <ScrollView style={{
@@ -102,10 +126,10 @@ const Arcticle = () => {
           </ScrollView>
         </View>
       </Modal>
-    </View>
+    </SafeAreaView>
 
     
   );
 };
 
-export default Arcticle;
+export default Article;

@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
+  SafeAreaView
 } from 'react-native';
 import Header from './components/header';
 import { auth, firebase } from '../../../firebase/config';
@@ -20,7 +21,7 @@ import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../../../nav/RootStack';
 
 
-const User = navigation => {
+const User = () => {
   const { navigate } = useNavigation<NavigationProp<RootStackParamList>>();
 
 
@@ -40,14 +41,14 @@ const User = navigation => {
   };
   useEffect(() => {
     onAuthStateChanged(auth, user => {
-      setId(user.uid);
-      const usersRef = firebase.firestore().collection('users');
+      const uid = user.uid;
+      const usersRef = firebase.firestore().collection('users')
       usersRef
-        .doc(id)
+        .doc(uid)
         .get()
         .then(firestoreDocument => {
           if (!firestoreDocument.exists) {
-            alert('User does not exist anymore.');
+            alert("User does not exist anymore.")
             return;
           } else {
             setEmail(firestoreDocument.data().EMAIL);
@@ -59,8 +60,7 @@ const User = navigation => {
     });
   }, []);
   return (
-    <View
-
+    <SafeAreaView
       style={{
         flex: 1,
         flexDirection: 'column',
@@ -70,12 +70,13 @@ const User = navigation => {
         style={{
           height: 300,
           width: '100%',
+          alignItems:'center',
+          justifyContent:'center',
         }}>
         <Image
           source={require('./components/avatar.jpg')}
           style={{
             marginTop: 90,
-            marginLeft: 140,
             width: 150,
             height: 150,
             borderRadius: 50,
@@ -84,17 +85,24 @@ const User = navigation => {
       </View>
       <View
         style={{
-          flexDirection: 'row',
-          backgroundColor: '#87CEEB',
-          height: 50,
-          width: 200,
-          marginLeft: 115,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Text style={{
-          fontSize: 25,
-        }}>{name}</Text>
+          alignItems:'center',
+          justifyContent:'center',
+        }}
+        >
+        <View
+          style={{
+            flexDirection: 'row',
+            backgroundColor: '#87CEEB',
+            height: 50,
+            width: 200,
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: 10,
+          }}>
+          <Text style={{
+            fontSize: 25,
+          }}>{name}</Text>
+        </View>
       </View>
       <View
         style={{
@@ -115,7 +123,7 @@ const User = navigation => {
           alignItems: 'center',
           fontSize: 25,
           marginLeft: 15,
-          marginTop: 15,
+          marginTop: 25,
         }}>{email}</Text>
       </View>
       <View
@@ -137,7 +145,7 @@ const User = navigation => {
           alignItems: 'center',
           fontSize: 25,
           marginLeft: 15,
-          marginTop: 15,
+          marginTop: 25,
         }}>{phone}</Text>
       </View>
       <View style={{
@@ -153,6 +161,12 @@ const User = navigation => {
         }}>{roles}</Text>
 
       </View>
+      <View
+        style={{
+          alignItems:'center',
+          justifyContent:'center',
+        }}
+        >
       <TouchableOpacity
         onPress={() => LogOut()}
         style={{
@@ -160,19 +174,20 @@ const User = navigation => {
           height: 55,
           width: 100,
           marginVertical: 10,
-          marginLeft: 165,
           alignItems: 'center',
+          borderRadius: 10,
         }}>
         <Text
           style={{
-            color: 'black',
+            color: 'black', 
             fontSize: 23,
-            marginVertical: 10,
+            marginVertical: 12,
           }}>
-          Log-Out
+          Log Out
         </Text>
       </TouchableOpacity>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 

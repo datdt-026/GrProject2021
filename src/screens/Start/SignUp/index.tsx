@@ -104,6 +104,7 @@ const SignUp = () => {
               height: 40,
               borderRadius: 8,
               marginVertical: 16,
+              paddingLeft: 10,
             }}
             placeholder="Name"
           />
@@ -117,6 +118,7 @@ const SignUp = () => {
               height: 40,
               borderRadius: 8,
               marginVertical: 16,
+              paddingLeft: 10,
             }}
             placeholder="Email"
           />
@@ -130,6 +132,7 @@ const SignUp = () => {
               height: 40,
               borderRadius: 8,
               marginVertical: 16,
+              paddingLeft: 10,
             }}
             placeholder="Mobile Number"
           />
@@ -143,6 +146,7 @@ const SignUp = () => {
               height: 40,
               borderRadius: 8,
               marginVertical: 16,
+              paddingLeft: 10,
             }}
             secureTextEntry
             placeholder="Password"

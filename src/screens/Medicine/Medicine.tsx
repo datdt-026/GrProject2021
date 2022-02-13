@@ -9,6 +9,7 @@ import {
   Keyboard,
   ScrollView,
   Platform,
+  SafeAreaView
 } from 'react-native';
 import Header from './components/header';
 import Task from './components/Task';
@@ -30,7 +31,7 @@ const App = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header />
       <ScrollView
         contentContainerStyle={{
@@ -69,7 +70,7 @@ const App = () => {
           </View>
         </TouchableOpacity>
       </KeyboardAvoidingView>
-    </View>
+    </SafeAreaView>
   );
 };
 

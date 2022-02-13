@@ -33,7 +33,7 @@ const List = () => {
   }, []);
 
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1}}>
       <Header />
       <View style={{flex: 1}}>
         <FlatList
@@ -86,7 +86,7 @@ const List = () => {
           )}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

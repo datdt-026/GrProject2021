@@ -53,7 +53,7 @@ const SignIn = () => {
                 break;
               case "Doctor":
                 alert("You are Doctor");
-                navigate('DoctorPage');
+                navigate('DocTab');
                 break;
               case "Admin":
                 alert("Welcome Manager");

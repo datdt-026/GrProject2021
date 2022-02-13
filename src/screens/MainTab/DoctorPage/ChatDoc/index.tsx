@@ -10,22 +10,15 @@ import {
 } from "react-native";;
 import ChatItem from "./chatlist";
 import Header from "./Header";
-function Chat(props) {
+function ChatDoc(props) {
   const [users, setUsers] = useState([
     {
-         url: 'https://randomuser.me/api/portraits/men/80.jpg',
-         name: 'Bac si Hieu',
+         url: 'https://randomuser.me/api/portraits/men/81.jpg',
+         name: 'Benh nhan Hieu',
          message: 'The nhe',
          numberOfUnreadMessages: 3,
          time: 'now'
      },
-     {
-     url: 'https://randomuser.me/api/portraits/men/70.jpg',
-         name: 'Bac si Dat',
-         message: 'noi it thoi',
-         numberOfUnreadMessages: 1,
-         time: '5 minutes'
-     }
   ]);
   const { navigation, route } = props;
   const { navigate, goBack } = navigation;
@@ -52,8 +45,7 @@ function Chat(props) {
           renderItem={({ item }) => (
             <ChatItem
               onPress={() => {
-                //alert(`You press item's name: ${item.name}`)
-                navigate("Messenger");
+                navigate("MessDoc");
               }}
               user={item}
               key={item.url}
@@ -64,4 +56,4 @@ function Chat(props) {
     </SafeAreaView>
   );
 }
-export default Chat;
+export default ChatDoc;
