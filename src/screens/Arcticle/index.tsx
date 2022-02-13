@@ -49,7 +49,10 @@ const Arcticle = () => {
       </View>
       <Modal isVisible={isModalVisible}>
         <View style={{flex: 1, backgroundColor: '#FFF'}}>
-          <ScrollView>
+          <ScrollView style={{
+            marginLeft: 10,
+            marginRight: 15,
+            }}>
             <Image
               source={require('../../assets/vaccine.png')}
               style={{
@@ -59,7 +62,11 @@ const Arcticle = () => {
                 marginTop: 16,
               }}
             />
-            <Text style={{fontSize: 24, fontWeight: 'bold', marginTop: 16}}>
+            <Text style={{
+              fontSize: 24,
+              fontWeight: 'bold', 
+              marginTop: 16,
+              }}>
               Covid-19 Vaccine{'\n'}
             </Text>
             <Text>
@@ -96,6 +103,8 @@ const Arcticle = () => {
         </View>
       </Modal>
     </View>
+
+    
   );
 };
 

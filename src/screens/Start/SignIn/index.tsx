@@ -112,6 +112,7 @@ const SignIn = () => {
             height: 40,
             borderRadius: 8,
             marginVertical: 16,
+            paddingLeft: 10,
           }}
           placeholder="EMAIL"
           onChangeText={(text) => setEMAIL(text)}
@@ -125,6 +126,7 @@ const SignIn = () => {
             height: 40,
             borderRadius: 8,
             marginVertical: 16,
+            paddingLeft: 10,
           }}
           secureTextEntry
           placeholder="PASSWORD"
