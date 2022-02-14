@@ -170,7 +170,7 @@ const Home = () => {
             </TouchableOpacity>
 
             {/* article */}
-            <TouchableOpacity onPress={() => navigate('Arcticle')}>
+            <TouchableOpacity onPress={() => navigate('Article')}>
               <View
                 style={{
                   backgroundColor: '#FFF',
@@ -185,7 +185,7 @@ const Home = () => {
                 />
                 <View style={{ marginTop: 32, marginHorizontal: 12 }}>
                   <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
-                    Related Arcticles
+                    Related Articles
                   </Text>
                   <Text style={{ fontSize: 12 }}>Short Description</Text>
                 </View>
