@@ -29,13 +29,9 @@ const Card = () => {
       });
   }, []);
 
-  return (
-    <View style={{flex: 1}}>
-      <FlatList
-        data={data}
-        keyExtractor={({id}, index) => id.toString()}
-        renderItem={({item}) => (
-          <TouchableOpacity>
+  const renderPosts = ({ item }) => {
+    return (
+      <TouchableOpacity>
             <View
               style={{
                 backgroundColor: 'white',
@@ -86,7 +82,15 @@ const Card = () => {
               </View>
             </View>
           </TouchableOpacity>
-        )}
+    )
+  }
+
+  return (
+    <View style={{flex: 1}}>
+      <FlatList
+        data={data}
+        keyExtractor={item => item.name}
+        renderItem={renderPosts}
       />
     </View>
   );
