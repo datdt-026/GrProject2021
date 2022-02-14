@@ -7,16 +7,16 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import { Text, View } from 'react-native-ui-lib';
+import {Text, View} from 'react-native-ui-lib';
 import Header from './components/header';
 import * as Iconly from 'react-native-iconly';
-import { useNavigation, NavigationProp } from '@react-navigation/native';
-import { RootStackParamList } from '../../../nav/RootStack';
+import {useNavigation, NavigationProp} from '@react-navigation/native';
+import {RootStackParamList} from '../../../nav/RootStack';
 
 const Home = () => {
-  const { navigate } = useNavigation<NavigationProp<RootStackParamList>>();
+  const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#F2F2F2'}}>
       <Header />
       <View>
         <TouchableOpacity>
@@ -33,7 +33,7 @@ const Home = () => {
             }}>
             <Image
               source={require('../../../assets/icon/ic_emergency.png')}
-              style={{ borderRadius: 30, marginLeft: 12 }}
+              style={{borderRadius: 30, marginLeft: 12}}
             />
             <View marginL-16>
               <Text>Emergency</Text>
@@ -42,14 +42,14 @@ const Home = () => {
             <Iconly.ArrowRight
               size={20}
               color="black"
-              style={{ marginLeft: 130 }}
+              style={{marginLeft: 130}}
             />
           </View>
         </TouchableOpacity>
 
         {/* option list */}
         <View>
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{flexDirection: 'row'}}>
             {/* doctor */}
             <TouchableOpacity onPress={() => navigate('Doctor')}>
               <View
@@ -62,18 +62,37 @@ const Home = () => {
                 }}>
                 <Image
                   source={require('../../../assets/icon/ic_doctor.png')}
-                  style={{ borderRadius: 30, marginLeft: 12, marginTop: 12 }}
+                  style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
                 />
-                <View style={{ marginTop: 32, marginHorizontal: 12 }}>
-                  <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+                <View style={{marginTop: 32, marginHorizontal: 12}}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Doctors
                   </Text>
-                  <Text style={{ fontSize: 12 }}>Short Description</Text>
+                  <Text style={{fontSize: 12}}>Short Description</Text>
                 </View>
               </View>
             </TouchableOpacity>
 
             {/* clinic */}
+            <TouchableOpacity onPress={() => navigate('List')}>
+              <View
+                style={{
+                  backgroundColor: '#FFF',
+                  width: 160,
+                  height: 150,
+                  marginTop: 16,
+                  marginLeft: 22,
+                }}>
+                <Image
+                  source={require('../../../assets/icon/ic_insurance.png')}
+                  style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
+                />
+                <View style={{marginTop: 32, marginHorizontal: 12}}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>List</Text>
+                  <Text style={{fontSize: 12}}>List</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
             {/* <TouchableOpacity onPress={() => navigate('Hospitals')}>
               <View
                 style={{
@@ -97,29 +116,8 @@ const Home = () => {
             </TouchableOpacity> */}
           </View>
 
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{flexDirection: 'row'}}>
             {/* Specialities */}
-            <TouchableOpacity onPress={() => navigate('List')}>
-              <View
-                style={{
-                  backgroundColor: '#FFF',
-                  width: 160,
-                  height: 150,
-                  marginTop: 16,
-                  marginLeft: 22,
-                }}>
-                <Image
-                  source={require('../../../assets/icon/ic_insurance.png')}
-                  style={{ borderRadius: 30, marginLeft: 12, marginTop: 12 }}
-                />
-                <View style={{ marginTop: 32, marginHorizontal: 12 }}>
-                  <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
-                    List
-                  </Text>
-                  <Text style={{ fontSize: 12 }}>List</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
 
             {/* lab */}
             <TouchableOpacity onPress={() => navigate('Medicine')}>
@@ -133,19 +131,41 @@ const Home = () => {
                 }}>
                 <Image
                   source={require('../../../assets/icon/ic_lab.png')}
-                  style={{ borderRadius: 30, marginLeft: 12, marginTop: 12 }}
+                  style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
                 />
-                <View style={{ marginTop: 32, marginHorizontal: 12 }}>
-                  <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+                <View style={{marginTop: 32, marginHorizontal: 12}}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Medicine
                   </Text>
-                  <Text style={{ fontSize: 12 }}>Short Description</Text>
+                  <Text style={{fontSize: 12}}>Short Description</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => navigate('Article')}>
+              <View
+                style={{
+                  backgroundColor: '#FFF',
+                  width: 160,
+                  height: 150,
+                  marginTop: 16,
+                  marginLeft: 22,
+                }}>
+                <Image
+                  source={require('../../../assets/icon/ic_article.png')}
+                  style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
+                />
+                <View style={{marginTop: 32, marginHorizontal: 12}}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                    Related Articles
+                  </Text>
+                  <Text style={{fontSize: 12}}>Short Description</Text>
                 </View>
               </View>
             </TouchableOpacity>
           </View>
 
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{flexDirection: 'row'}}>
             {/* Insurance */}
             {/* <TouchableOpacity onPress={() => navigate('Upload')}>
               <View
@@ -170,27 +190,6 @@ const Home = () => {
             </TouchableOpacity> */}
 
             {/* article */}
-            <TouchableOpacity onPress={() => navigate('Article')}>
-              <View
-                style={{
-                  backgroundColor: '#FFF',
-                  width: 160,
-                  height: 150,
-                  marginTop: 16,
-                  marginLeft: 22,
-                }}>
-                <Image
-                  source={require('../../../assets/icon/ic_article.png')}
-                  style={{ borderRadius: 30, marginLeft: 12, marginTop: 12 }}
-                />
-                <View style={{ marginTop: 32, marginHorizontal: 12 }}>
-                  <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
-                    Related Articles
-                  </Text>
-                  <Text style={{ fontSize: 12 }}>Short Description</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
           </View>
         </View>
       </View>

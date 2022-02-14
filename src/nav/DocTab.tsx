@@ -1,8 +1,8 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import Home from '../screens/MainTab/Home';
-import { Image, Colors } from 'react-native-ui-lib';
+import {Image, Colors} from 'react-native-ui-lib';
 import Doctor from '../screens/MainTab/Doctor';
 import User from '../screens/MainTab/User';
 import Calendar from '../screens/MainTab/Calendar';
@@ -30,14 +30,14 @@ const DocTab = () => {
         tabBarActiveTintColor: Colors.primary,
         tabBarShowLabel: false,
         tabBarStyle: {
-        height: 70,
+          height: 50,
         },
       }}>
       <Tab.Screen
         name="Home"
         component={DoctorPage}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Image source={require('../assets/Home.png')} tintColor={color} />
           ),
         }}
@@ -46,7 +46,7 @@ const DocTab = () => {
         name="Doctor"
         component={Doctor}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Image source={require('../assets/Doctor.png')} tintColor={color} />
           ),
         }}
@@ -55,7 +55,7 @@ const DocTab = () => {
         name="Chat"
         component={ChatDoc}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Image source={require('../assets/Chat.png')} tintColor={color} />
           ),
         }}
@@ -64,7 +64,7 @@ const DocTab = () => {
         name="Calendar"
         component={Calendar}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Image
               source={require('../assets/Calendar.png')}
               tintColor={color}
@@ -76,13 +76,11 @@ const DocTab = () => {
         name="User"
         component={User}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <Image source={require('../assets/User.png')} tintColor={color} />
           ),
         }}
       />
-
-
     </Tab.Navigator>
   );
 };
