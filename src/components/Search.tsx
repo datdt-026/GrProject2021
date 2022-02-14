@@ -7,10 +7,10 @@ const SearchComponent = ({ onSearchEnter }) => {
 
   return (
     <View style={styles.searchWrapperStyle}>
-      <Icon size={18} name="search" color="white" style={styles.iconStyle} />
+      <Icon size={18} name="search" color="black" style={styles.iconStyle} />
       <TextInput
         placeholder="Search"
-        placeholderTextColor="white"
+        placeholderTextColor="grey"
         style={styles.searchInputStyle}
         value={term}
         onChangeText={(newText) => {
@@ -23,7 +23,7 @@ const SearchComponent = ({ onSearchEnter }) => {
       <Icon
         size={18}
         name="close"
-        color="white"
+        color="black"
         style={styles.iconStyle}
         onPress={() => {
           setTerm("");
@@ -35,13 +35,17 @@ const SearchComponent = ({ onSearchEnter }) => {
 };
 
 const styles = StyleSheet.create({
-  searchWrapperStyle: {
-    backgroundColor: "#16A085",
+    searchWrapperStyle: {
+    marginTop: 10,
+    marginLeft: 25,
+    backgroundColor: 'white',
     flexDirection: "row",
     justifyContent: "space-between",
+    borderRadius: 20,
+    marginRight: 20,
   },
   iconStyle: {
-    marginTop: 12,
+    marginTop: 9,
     marginHorizontal: 8,
   },
   searchInputStyle: {
@@ -50,7 +54,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 0,
     margin: 0,
-    color: "white",
+    color: "black",
   },
 });
 

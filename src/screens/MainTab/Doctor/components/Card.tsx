@@ -7,29 +7,35 @@ import {
   Text,
   TouchableOpacity,
   View,
+  StatusBar
 } from 'react-native';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {IDoctor} from '../../../../data/inforDoctor';
 import doc_urls from '../../../../config/Doctor';
+import SearchComponent from '../../../../components/Search';
+import axios from "axios";
 
 const Card = () => {
-  const [data, setData] = React.useState<IDoctor[]>([]);
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [data, setData] = useState([]);
+  const [err, setErr] = useState("");
+  const [term, setTerm] = useState("");
 
-  React.useEffect(() => {
-    fetch(doc_urls.doctor)
-      .then(response => response.json())
-      .then(doctors => {
-        console.log('json', doctors);
-        setData(doctors);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
+  const getData = (name) => {
+    axios.get(`https://61a718ea8395690017be94dc.mockapi.io/Doctor?name=${name}`).then((res) => {
+      if (res.data.length > 0) {
+        setData(res.data);
+      } else {
+        setData([]);
+        setErr("                                     No doctor found");
+      }
+    });
+  };
+  useEffect(() => {
+    getData(term);
+  }, [term]);
 
-  const renderPosts = ({ item }) => {
+  const renderCard = ({ item }) => {
     return (
       <TouchableOpacity>
             <View
@@ -86,13 +92,24 @@ const Card = () => {
   }
 
   return (
-    <View style={{flex: 1}}>
-      <FlatList
-        data={data}
-        keyExtractor={item => item.name}
-        renderItem={renderPosts}
-      />
-    </View>
+    <>
+      <View>
+        <SearchComponent onSearchEnter={(newTerm) => {
+          setTerm(newTerm);
+          setErr("");
+        }} />
+
+        {err ?
+          <Text>{err}</Text>
+          :
+          <FlatList
+            data={data}
+            renderItem={renderCard}
+            keyExtractor={Doctor => Doctor.name}
+          />
+        }
+      </View>
+    </>
   );
 };
 
