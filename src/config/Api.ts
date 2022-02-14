@@ -4,3 +4,6 @@ const urls = {
   patientByName: (name: string) => base_url + `/Patients?name=${name}`,
 };
 export default urls;
+
+
+//https://61a718ea8395690017be94dc.mockapi.io/Patients?name=${name}
