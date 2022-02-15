@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import {StyleSheet, Text, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 import MainTab from './MainTab';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import WelcomeScreen from '../screens/Start';
 import SignIn from '../screens/Start/SignIn';
 import SignUp from '../screens/Start/SignUp';
@@ -44,76 +44,70 @@ const RootStack = () => {
         <Stack.Screen
           name="WelcomeScreen"
           component={WelcomeScreen}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="MainTab"
           component={MainTab}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="DocTab"
           component={DocTab}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="SignIn"
           component={SignIn}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="SignUp"
           component={SignUp}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="Doctor"
           component={Doctor}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="Hospitals"
           component={Hospitals}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="List"
           component={List}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="Article"
           component={Article}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="Upload"
           component={Upload}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="Medicine"
           component={Medicine}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="DoctorPage"
           component={DoctorPage}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="AdminSrc"
           component={AdminSrc}
-          options={{ headerShown: false }}
+          options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="Messenger"
-          component={Messenger}
-        />
-        <Stack.Screen
-          name="MessDoc"
-          component={MessDoc}
-        />
+        <Stack.Screen name="Messenger" component={Messenger} />
+        <Stack.Screen name="MessDoc" component={MessDoc} />
       </Stack.Navigator>
     </NavigationContainer>
   );

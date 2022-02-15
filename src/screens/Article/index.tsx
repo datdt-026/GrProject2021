@@ -8,7 +8,7 @@ import {
   ScrollView,
   TouchableOpacity,
   ImageBackground,
-  SafeAreaView
+  SafeAreaView,
 } from 'react-native';
 import Modal from 'react-native-modal';
 import Header from './components/header';
@@ -73,9 +73,10 @@ const Article = () => {
 
       <Modal isVisible={isModalVisible}>
         <View style={{flex: 1, backgroundColor: '#FFF'}}>
-          <ScrollView style={{
-            marginLeft: 10,
-            marginRight: 15,
+          <ScrollView
+            style={{
+              marginLeft: 10,
+              marginRight: 15,
             }}>
             <Image
               source={require('../../assets/vaccine.png')}
@@ -86,10 +87,11 @@ const Article = () => {
                 marginTop: 16,
               }}
             />
-            <Text style={{
-              fontSize: 24,
-              fontWeight: 'bold', 
-              marginTop: 16,
+            <Text
+              style={{
+                fontSize: 24,
+                fontWeight: 'bold',
+                marginTop: 16,
               }}>
               Covid-19 Vaccine{'\n'}
             </Text>
@@ -127,8 +129,6 @@ const Article = () => {
         </View>
       </Modal>
     </SafeAreaView>
-
-    
   );
 };
 
