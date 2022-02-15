@@ -115,7 +115,7 @@ const RootStack = () => {
         <Stack.Screen
           name="MessDoc"
           component={MessDoc}
-          options={{ headerShown: false }}
+          options={{ headerShown: true }}
         />
         <Stack.Screen
           name="MyPic"
