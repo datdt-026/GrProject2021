@@ -29,7 +29,7 @@ const Article = () => {
       <View style={{alignItems: 'center', marginTop: 16}}>
         <TouchableOpacity activeOpacity={0.6} onPress={toggleModal}>
           <ImageBackground
-            source={require('../../assets/vaccine.png')}
+            source={require('../../assets/LungCACXR.png')}
             imageStyle={{borderRadius: 10}}
             style={{
               width: 343,
@@ -42,7 +42,7 @@ const Article = () => {
                 alignItems: 'flex-end',
               }}>
               <Text style={{fontSize: 24, color: '#FFF', fontWeight: 'bold'}}>
-                Covid-19 Vaccine
+                Lung cancer
               </Text>
             </View>
           </ImageBackground>
@@ -78,7 +78,7 @@ const Article = () => {
             marginRight: 15,
             }}>
             <Image
-              source={require('../../assets/vaccine.png')}
+              source={require('../../assets/LungCACXR.png')}
               style={{
                 width: 280,
                 height: 144,
@@ -91,36 +91,18 @@ const Article = () => {
               fontWeight: 'bold', 
               marginTop: 16,
               }}>
-              Covid-19 Vaccine{'\n'}
+              Lung Cancer{'\n'}
             </Text>
             <Text>
-              From Wikipedia, the free encyclopedia{'\n'}
-              {'\n'}A COVID‑19 vaccine is a vaccine intended to provide acquired
-              immunity against severe acute respiratory syndrome coronavirus 2
-              (SARS‑CoV‑2), the virus that causes coronavirus disease 2019
-              (COVID‑19).{'\n'}
-              {'\n'}Prior to the COVID‑19 pandemic, an established body of
-              knowledge existed about the structure and function of
-              coronaviruses causing diseases like severe acute respiratory
-              syndrome (SARS) and Middle East respiratory syndrome (MERS). This
-              knowledge accelerated the development of various vaccine platforms
-              during early 2020. The initial focus of SARS-CoV-2 vaccines was on
-              preventing symptomatic, often severe illness.On 10 January 2020,
-              the SARS-CoV-2 genetic sequence data was shared through GISAID,
-              and by 19 March, the global pharmaceutical industry announced a
-              major commitment to address COVID‑19.{'\n'}
-              {'\n'}The COVID‑19 vaccines are widely credited for their role in
-              reducing the severity and death caused by COVID‑19.[4][5] Many
-              countries have implemented phased distribution plans that
-              prioritize those at highest risk of complications, such as the
-              elderly, and those at high risk of exposure and transmission, such
-              as healthcare workers.{'\n'}
-              {'\n'}As of 1 February 2022, 10.1 billion doses of COVID‑19
-              vaccines have been administered worldwide based on official
-              reports from national public health agencies. By December 2020,
-              more than 10 billion vaccine doses had been preordered by
-              countries, with about half of the doses purchased by high-income
-              countries comprising 14% of the world's population.
+            Lung cancer is still one of the most frequent malignancies globally, killing more people each year than breast, colon, and prostate cancers combined.{'\n'}
+            •	Lung cancer is by far the most common cause of cancer mortality in both men and women, accounting for over 25% of all cancer fatalities. Lung cancer kills more people each year than colon, breast, and prostate cancer combined. Worldwide in 2020, there were 2.21 million new cases of lung cancer and 1.80 million deaths from lung cancer. {'\n'}
+            •	Lung cancer has the lowest 5-year survival rate at only 18% compared to breast at 90%, prostate at 99%, and colorectal at 65%. {'\n'}{'\n'}
+
+            In Vietnam, in 2018, according to the World Health Organization (WHO), we had the rate of 21.7 cases per 100,000 people, ranked 56 out of 185 countries and territories. We had the highest rate in South-East Asia. In the same year, Vietnam recorded more than 33,600 new cases and nearly 21,000 deaths.
+
+            {'\n'}{'\n'}According to Global Cancer Statistics, lung cancer has a high incidence and fatality rate. Most lung cancer patients are diagnosed when it has progressed to an advanced stage.
+            {'\n'}This is because most lung cancer patients have no particular evident symptoms at the start of the disease, and many people are discovered at an advanced stage. According to statistics, the prognosis of lung cancer is closely related to the clinical stage, implying that early detection might enhance the patient's prognosis. Efficient diagnosis and screening procedures must be chosen to increase the early detection rate and forecast of lung cancer. The 5-year survival rate for lung cancer drops dramatically from a stage 1 diagnosis (68-92% survival) to a stage 4 diagnosis (0-10% survival). Only 16% of the eligible population will be diagnosed at an early stage when lung cancer is when the disease is most likely to be cured. Therefore, our project has the aim to build a mobile application to help doctors can remotely diagnose lung cancer.
+
             </Text>
             <Button title="Done" onPress={toggleModal} />
           </ScrollView>

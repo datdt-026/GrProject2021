@@ -37,7 +37,7 @@ const Home = () => {
             />
             <View marginL-16>
               <Text>Emergency</Text>
-              <Text grey50>Short Description</Text>
+              <Text grey40>For emergency situations</Text>
             </View>
             <Iconly.ArrowRight
               size={20}
@@ -68,7 +68,7 @@ const Home = () => {
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Doctors
                   </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
+                  <Text style={{fontSize: 12}}>View Doctor List</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -91,7 +91,7 @@ const Home = () => {
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Hospitals
                   </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
+                  <Text style={{fontSize: 12}}>View Hospital List</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -115,32 +115,11 @@ const Home = () => {
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Related Articles
                   </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
+                  <Text style={{fontSize: 12}}></Text>
                 </View>
               </View>
             </TouchableOpacity>
-            {/* Specialities */}
-            {/* <TouchableOpacity onPress={() => navigate('List')}>
-              <View
-                style={{
-                  backgroundColor: '#FFF',
-                  width: 160,
-                  height: 150,
-                  marginTop: 16,
-                  marginLeft: 22,
-                }}>
-                <Image
-                  source={require('../../../assets/icon/ic_insurance.png')}
-                  style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
-                />
-                <View style={{marginTop: 32, marginHorizontal: 12}}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    Patients
-                  </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
-                </View>
-              </View>
-            </TouchableOpacity> */}
+             
 
             {/* lab */}
             <TouchableOpacity onPress={() => navigate('Medicine')}>
@@ -160,7 +139,7 @@ const Home = () => {
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Medicine
                   </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
+                  <Text style={{fontSize: 12}}>Daily reminder</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -185,10 +164,32 @@ const Home = () => {
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Upload Image
                   </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
+                  <Text style={{fontSize: 12}}></Text>
                 </View>
               </View>
             </TouchableOpacity>
+            
+            <TouchableOpacity onPress={() => navigate('MyPic')}>
+              <View
+                style={{
+                  backgroundColor: '#FFF',
+                  width: 160,
+                  height: 150,
+                  marginTop: 16,
+                  marginLeft: 22,
+                }}>
+                <Image
+                  source={require('../../../assets/icon/ic_insurance.png')}
+                  style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
+                />
+                <View style={{marginTop: 32, marginHorizontal: 12}}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                    My Pictures
+                  </Text>
+                  <Text style={{fontSize: 12}}>View my pictures</Text>
+                </View>
+              </View>
+            </TouchableOpacity> 
 
             {/* article */}
           </View>

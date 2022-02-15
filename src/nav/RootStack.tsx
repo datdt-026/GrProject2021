@@ -17,6 +17,7 @@ import AdminSrc from '../screens/MainTab/AdminSrc';
 import Messenger from '../screens/Messenger/Messenger';
 import DocTab from './DocTab';
 import MessDoc from '../screens/MainTab/DoctorPage/MessDoc/MessDoc';
+import MyPic from '../screens/MyPic/MyPic';
 
 export type RootStackParamList = {
   WelcomeScreen: undefined;
@@ -34,6 +35,7 @@ export type RootStackParamList = {
   Messenger: undefined;
   DocTab: undefined;
   MessDoc: undefined;
+  MyPic: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -113,6 +115,12 @@ const RootStack = () => {
         <Stack.Screen
           name="MessDoc"
           component={MessDoc}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MyPic"
+          component={MyPic}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

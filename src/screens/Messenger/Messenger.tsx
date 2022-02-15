@@ -27,7 +27,7 @@ function Messenger(props) {
       url: "https://randomuser.me/api/portraits/men/13.jpg",
       showUrl: true,
       isSender: false,
-      messenger: "Hello Hieu",
+      messenger: "Hello A",
       timestamp: 1641654298000,
     },
     {

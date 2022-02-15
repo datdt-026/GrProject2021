@@ -68,18 +68,18 @@ const User = () => {
       <Header />
       <View
         style={{
-          height: 300,
+          height: 200,
           width: '100%',
           alignItems:'center',
           justifyContent:'center',
         }}>
         <Image
-          source={require('./components/avatar.jpg')}
+          source={require('../../../assets/ava.jpeg')}
           style={{
-            marginTop: 90,
+            marginTop: 0,
             width: 150,
             height: 150,
-            borderRadius: 50,
+            borderRadius: 90,
           }}
         />
       </View>
@@ -104,6 +104,17 @@ const User = () => {
           }}>{name}</Text>
         </View>
       </View>
+      <View style={{
+        flexDirection: 'column',
+
+      }}>
+        <Text style={{
+          alignItems: 'center',
+          fontSize: 20,
+          textAlign: 'center'
+        }}>Role: {roles}</Text>
+
+      </View>
       <View
         style={{
           height: 80,
@@ -126,6 +137,7 @@ const User = () => {
           marginTop: 25,
         }}>{email}</Text>
       </View>
+      
       <View
         style={{
           height: 80,
@@ -148,19 +160,7 @@ const User = () => {
           marginTop: 25,
         }}>{phone}</Text>
       </View>
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-
-      }}>
-        <Text style={{
-          alignItems: 'center',
-          fontSize: 25,
-          marginLeft: 15,
-          marginTop: 15,
-        }}>{roles}</Text>
-
-      </View>
+      
       <View
         style={{
           alignItems:'center',
@@ -173,7 +173,7 @@ const User = () => {
           backgroundColor: '#AFEEEE',
           height: 55,
           width: 100,
-          marginVertical: 10,
+          marginVertical: 120,
           alignItems: 'center',
           borderRadius: 10,
         }}>
