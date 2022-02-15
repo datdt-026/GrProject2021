@@ -1,46 +1,62 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-const SearchComponent = ({ onSearchEnter }) => {
-  const [term, setTerm] = useState("");
+const SearchComponent = ({onSearchEnter}) => {
+  const [term, setTerm] = useState('');
 
   return (
     <View style={styles.searchWrapperStyle}>
-      <Icon size={18} name="search" color="black" style={styles.iconStyle} />
+      <Image
+        source={require('../assets/search.png')}
+        style={{
+          width: 18,
+          height: 18,
+          marginTop: 12,
+          marginRight: 15,
+          marginLeft: 4,
+        }}
+      />
       <TextInput
         placeholder="Search"
         placeholderTextColor="grey"
         style={styles.searchInputStyle}
         value={term}
-        onChangeText={(newText) => {
+        onChangeText={newText => {
           setTerm(newText);
         }}
         onEndEditing={() => {
           onSearchEnter(term);
         }}
       />
-      <Icon
-        size={18}
-        name="close"
-        color="black"
-        style={styles.iconStyle}
+      <TouchableOpacity
         onPress={() => {
-          setTerm("");
-          onSearchEnter("");
-        }}
-      />
+          setTerm('');
+          onSearchEnter('');
+        }}>
+        <Image
+          source={require('../assets/close.png')}
+          style={styles.iconStyle}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-    searchWrapperStyle: {
+  searchWrapperStyle: {
     marginTop: 10,
     marginLeft: 25,
     backgroundColor: 'white',
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     borderRadius: 20,
     marginRight: 20,
   },
@@ -54,7 +70,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 0,
     margin: 0,
-    color: "black",
+    color: 'black',
   },
 });
 
