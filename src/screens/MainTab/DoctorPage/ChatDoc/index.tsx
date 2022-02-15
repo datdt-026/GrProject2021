@@ -13,9 +13,9 @@ import Header from "./Header";
 function ChatDoc(props) {
   const [users, setUsers] = useState([
     {
-         url: 'https://randomuser.me/api/portraits/men/81.jpg',
-         name: 'Benh nhan Hieu',
-         message: 'The nhe',
+         url: 'https://randomuser.me/api/portraits/men/1.jpg',
+         name: 'Benh nhan A',
+         message: 'Thank you very much!',
          numberOfUnreadMessages: 3,
          time: 'now'
      },

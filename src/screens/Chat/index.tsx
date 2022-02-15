@@ -13,19 +13,12 @@ import Header from "./Header";
 function Chat(props) {
   const [users, setUsers] = useState([
     {
-         url: 'https://randomuser.me/api/portraits/men/80.jpg',
-         name: 'Bac si Hieu',
-         message: 'The nhe',
-         numberOfUnreadMessages: 3,
+         url: 'https://randomuser.me/api/portraits/men/13.jpg',
+         name: 'Doctor A',
+         message: 'Ok',
+         numberOfUnreadMessages: 1,
          time: 'now'
      },
-     {
-     url: 'https://randomuser.me/api/portraits/men/70.jpg',
-         name: 'Bac si Dat',
-         message: 'noi it thoi',
-         numberOfUnreadMessages: 1,
-         time: '5 minutes'
-     }
   ]);
   const { navigation, route } = props;
   const { navigate, goBack } = navigation;
