@@ -47,12 +47,12 @@ const SignIn = () => {
             }
             switch (firestoreDocument.data().ROLES) {
               case "Patient":
-                alert("You are Patient");
+                alert("You are a Patient");
 
                 navigate('MainTab');
                 break;
               case "Doctor":
-                alert("You are Doctor");
+                alert("You are a Doctor");
                 navigate('DocTab');
                 break;
               case "Admin":

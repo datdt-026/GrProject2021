@@ -19,7 +19,7 @@ const Home = () => {
     <SafeAreaView style={{flex: 1, backgroundColor: '#F2F2F2'}}>
       <Header />
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => alert('Call 115')}>
           <View
             style={{
               backgroundColor: '#FFFFFF',
@@ -68,7 +68,7 @@ const Home = () => {
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Doctors
                   </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
+                  <Text style={{fontSize: 12}}>View Doctor List</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -88,8 +88,8 @@ const Home = () => {
                   style={{borderRadius: 30, marginLeft: 12, marginTop: 12}}
                 />
                 <View style={{marginTop: 32, marginHorizontal: 12}}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>List</Text>
-                  <Text style={{fontSize: 12}}>List</Text>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Patient List</Text>
+                  <Text style={{fontSize: 12}}></Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -137,7 +137,7 @@ const Home = () => {
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Medicine
                   </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
+                  <Text style={{fontSize: 12}}>Daily reminder</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -159,7 +159,7 @@ const Home = () => {
                   <Text style={{fontSize: 16, fontWeight: 'bold'}}>
                     Related Articles
                   </Text>
-                  <Text style={{fontSize: 12}}>Short Description</Text>
+                  <Text style={{fontSize: 12}}></Text>
                 </View>
               </View>
             </TouchableOpacity>

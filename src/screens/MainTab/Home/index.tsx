@@ -19,7 +19,7 @@ const Home = () => {
     <SafeAreaView style={{flex: 1, backgroundColor: '#F2F2F2'}}>
       <Header />
       <View>
-        <TouchableOpacity onPress={() => alert('CALL 115')}>
+        <TouchableOpacity onPress={() => alert('Call 115')}>
           <View
             style={{
               backgroundColor: '#FFFFFF',
