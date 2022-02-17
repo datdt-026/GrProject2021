@@ -9,16 +9,19 @@ import {
     View,
     StatusBar
   } from 'react-native';
-  import React, {useState, useEffect} from 'react';
-  import SearchComponent from '../../../../components/Search';
-  import axios from "axios";
+import React, {useState, useEffect} from 'react';
+import SearchComponent from '../../../../components/Search';
+import axios from "axios";
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../../../../nav/RootStack';
   
   const Card = () => {
+    const {navigate} = useNavigation<NavigationProp<RootStackParamList>>();
   const [loading, setLoading] = useState<boolean>(true);
     const [data, setData] = useState([]);
     const [err, setErr] = useState("");
     const [term, setTerm] = useState("");
-  
+    
     const getData = (name) => {
       axios.get(`https://61a718ea8395690017be94dc.mockapi.io/Patients?name=${name}`).then((res) => {
         if (res.data.length > 0) {
@@ -36,7 +39,8 @@ import {
   
     const renderCard = ({ item }) => {
         return (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate('MessDoc')}>
+
               <View style={{margin: 12}}>
                   <Image
                       style={{

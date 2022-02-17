@@ -19,9 +19,9 @@ const SearchComponent = ({onSearchEnter}) => {
         style={{
           width: 18,
           height: 18,
-          marginTop: 12,
-          marginRight: 15,
-          marginLeft: 4,
+          marginTop: 8,
+          marginRight: 12,
+          marginLeft: 9,
         }}
       />
       <TextInput
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   iconStyle: {
-    marginTop: 9,
+    marginTop: 3,
     marginHorizontal: 8,
   },
   searchInputStyle: {

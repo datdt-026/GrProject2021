@@ -17,45 +17,45 @@ function MessengerDoc(props) {
   const [typedText, setTypedText] = useState("");
   const [chatHistory, setChatHistory] = useState([
     {
-      url: "https://randomuser.me/api/portraits/men/70.jpg",
+      url: "https://randomuser.me/api/portraits/men/1.jpg",
       showUrl: true,
       isSender: false,
-      messenger: "Chao Hieu",
+      messenger: "Hello doctor",
       timestamp: 1641654238000,
     },
     {
-      url: "https://randomuser.me/api/portraits/men/70.jpg",
-      showUrl: false,
+      url: "https://randomuser.me/api/portraits/men/13.jpg",
+      showUrl: true,
       isSender: true,
-      messenger: "Chao cai gi",
+      messenger: "Hello Hieu",
       timestamp: 1641654298000,
     },
     {
       url: "https://randomuser.me/api/portraits/men/70.jpg",
       showUrl: false,
       isSender: true,
-      messenger: "Nay em dau phoi qua...",
+      messenger: "How are you feeling right now?",
       timestamp: 1641654538000,
     },
     {
-      url: "https://randomuser.me/api/portraits/men/50.jpg",
+      url: "https://randomuser.me/api/portraits/men/1.jpg",
       showUrl: true,
       isSender: false,
-      messenger: "Uk",
+      messenger: "I just sent you my DCOM picture",
       timestamp: 1641654598000,
     },
     {
       url: "https://randomuser.me/api/portraits/men/50.jpg",
       showUrl: false,
       isSender: false,
-      messenger: "Hut it thuoc thoi!",
+      messenger: "Can you check it for me, please?",
       timestamp: 1641654598000,
     },
     {
         url: "https://randomuser.me/api/portraits/men/50.jpg",
         showUrl: false,
         isSender: false,
-        messenger: "The nhe",
+        messenger: "Thank you very much!",
         timestamp: 1641654598000,
       },
   ]);
@@ -76,7 +76,7 @@ function MessengerDoc(props) {
         renderItem={({ item }) => (
           <MessengerDocItem
             onPress={() => {
-              alert('Bac si Hieu');
+              alert('Benh nhan A');
             }}
             item={item}
             key={`${item.timestamp}`}
@@ -101,9 +101,13 @@ function MessengerDoc(props) {
           }}
           style={{
             color: "black",
+            borderWidth: 3,
+            borderColor: '#E0E0E0',
             paddingStart: 10,
+            marginLeft: 10,
+            borderRadius: 7,
           }}
-          placeholder="Enter your message here"
+          placeholder="Enter your message here                                      "
           value={typedText}
           placeholderTextColor= 'grey'
         />
@@ -114,6 +118,10 @@ function MessengerDoc(props) {
             }
           }}
         >
+          <Image style= {{
+            padding: 10,
+            marginRight: 25, }}
+            source={require('../../../../assets/send.png')} />
         </TouchableOpacity>
       </View>
     </View>

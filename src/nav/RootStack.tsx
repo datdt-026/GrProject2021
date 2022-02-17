@@ -17,6 +17,9 @@ import AdminSrc from '../screens/MainTab/AdminSrc';
 import Messenger from '../screens/Messenger/Messenger';
 import DocTab from './DocTab';
 import MessDoc from '../screens/MainTab/DoctorPage/MessDoc/MessDoc';
+import MyPic from '../screens/MyPic/MyPic';
+import DocBList from '../screens/MainTab/DocB.tsx/DocBList';
+import DocBItem from '../screens/MainTab/DocB.tsx/DocBItem';
 
 export type RootStackParamList = {
   WelcomeScreen: undefined;
@@ -34,6 +37,9 @@ export type RootStackParamList = {
   Messenger: undefined;
   DocTab: undefined;
   MessDoc: undefined;
+  MyPic: undefined;
+  DocBList: undefined;
+  DocBItem: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -107,7 +113,26 @@ const RootStack = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen name="Messenger" component={Messenger} />
-        <Stack.Screen name="MessDoc" component={MessDoc} />
+        <Stack.Screen
+          name="MessDoc"
+          component={MessDoc}
+          options={{headerShown: true}}
+        />
+        <Stack.Screen
+          name="MyPic"
+          component={MyPic}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="DocBList"
+          component={DocBList}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="DocBItem"
+          component={DocBItem}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
